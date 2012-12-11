@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VerificationData xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 https://raw.github.com/VAMDC/NodeSoftware/master/other/verification/verification.xsd" xmlns:cml="http://www.xml-cml.org/schema"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/0.3">
+<VerificationData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 https://raw.github.com/VAMDC/NodeSoftware/master/other/verification/verification.xsd" xmlns:cml="http://www.xml-cml.org/schema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/1.0">
 <VerificationResult>
 	<NumberOfMolecularStates correct="2" incorrect="1" total="3" unidentified="0"/>
 	<NumberOfRadiativeTransitions correct="5" incorrect="1" total="6" unidentified="0"/>
@@ -169,6 +169,7 @@
 				</ChemicalName>
 				<InChI>InChI=1S/H2O/h1H2/i/hD</InChI>
 				<InChIKey>XLYOFNOQVPJJNP-DYCDLGHISA-N</InChIKey>
+					<VAMDCSpeciesID/>
 				<StableMolecularProperties>
 					<MolecularWeight>
 						<Value units="amu">19.0069</Value>
@@ -178,7 +179,7 @@
 			</MolecularChemicalSpecies>
 			<MolecularState stateID="Swadis-163-0.0.0.11.1.1-3">
 				<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 					<case:QNs>
 						<case:v1>0</case:v1>
 						<case:v2>0</case:v2>
@@ -194,7 +195,7 @@
 			</MolecularState>
 			<MolecularState stateID="Swadis-163-0.0.0.11.1.10-2">
 				<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 					<case:QNs>
 						<case:v1>0</case:v1>
 						<case:v2>0</case:v2>
@@ -210,7 +211,7 @@
 			</MolecularState>
 			<MolecularState stateID="Swadis-163-0.1.0.10.1.9-1">
 				<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 					<case:QNs>
 						<case:v1>0</case:v1>
 						<case:v2>1</case:v2>
@@ -229,7 +230,7 @@
 </Species>
 <Processes>
 	<Radiative>
-		<RadiativeTransition id="Pwadis-1206593">
+		<RadiativeTransition id="Pwadis-R1206593">
 			<SourceRef>Bwadis-874</SourceRef>
 			<EnergyWavelength>
 				<Wavenumber methodRef="Mwadis-Exp">
@@ -239,12 +240,13 @@
 			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
 			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
+				<ProcessClass/>
 			<Verification>
 				<nltcsRuleT01>true</nltcsRuleT01>
 				<nltcsRuleT02>true</nltcsRuleT02>
 			</Verification>
 		</RadiativeTransition>
-		<RadiativeTransition id="Pwadis-1218437">
+		<RadiativeTransition id="Pwadis-R1218437">
 			<SourceRef>Bwadis-1152</SourceRef>
 			<EnergyWavelength>
 				<Wavenumber methodRef="Mwadis-Exp">
@@ -254,12 +256,13 @@
 			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
 			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
+				<ProcessClass/>
 			<Verification>
 				<nltcsRuleT01>true</nltcsRuleT01>
 				<nltcsRuleT02>true</nltcsRuleT02>
 			</Verification>
 		</RadiativeTransition>
-		<RadiativeTransition id="Pwadis-1449149">
+		<RadiativeTransition id="Pwadis-R1449149">
 			<SourceRef>Bwadis-1152</SourceRef>
 			<EnergyWavelength>
 				<Wavenumber methodRef="Mwadis-Exp">
@@ -269,12 +272,13 @@
 			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
 			<LowerStateRef>Swadis-163-0.0.0.11.1.1-3</LowerStateRef>
 			<Probability/>
+				<ProcessClass/>
 			<Verification>
 				<nltcsRuleT01>true</nltcsRuleT01>
 				<nltcsRuleT02>false</nltcsRuleT02>
 			</Verification>
 		</RadiativeTransition>
-		<RadiativeTransition id="Pwadis-618325">
+		<RadiativeTransition id="Pwadis-R618325">
 			<SourceRef>Bwadis-1079</SourceRef>
 			<EnergyWavelength>
 				<Wavenumber methodRef="Mwadis-Exp">
@@ -284,12 +288,13 @@
 			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
 			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
+				<ProcessClass/>
 			<Verification>
 				<nltcsRuleT01>true</nltcsRuleT01>
 				<nltcsRuleT02>true</nltcsRuleT02>
 			</Verification>
 		</RadiativeTransition>
-		<RadiativeTransition id="Pwadis-561107">
+		<RadiativeTransition id="Pwadis-R561107">
 			<SourceRef>Bwadis-1032</SourceRef>
 			<EnergyWavelength>
 				<Wavenumber methodRef="Mwadis-Exp">
@@ -299,12 +304,13 @@
 			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
 			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
+				<ProcessClass/>
 			<Verification>
 				<nltcsRuleT01>true</nltcsRuleT01>
 				<nltcsRuleT02>true</nltcsRuleT02>
 			</Verification>
 		</RadiativeTransition>
-		<RadiativeTransition id="Pwadis-567184">
+		<RadiativeTransition id="Pwadis-R567184">
 			<SourceRef>Bwadis-1066</SourceRef>
 			<EnergyWavelength>
 				<Wavenumber methodRef="Mwadis-Exp">
@@ -314,6 +320,7 @@
 			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
 			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
+				<ProcessClass/>
 			<Verification>
 				<nltcsRuleT01>true</nltcsRuleT01>
 				<nltcsRuleT02>true</nltcsRuleT02>

@@ -55,7 +55,7 @@ def makeTestFileFromBigFile(fileName, count=0):
 
 	root = tree.getroot()
 	locations = root.get('{%s}schemaLocation' % check.XSI_NS).split(' ')
-	locations[1] = '../xsd/xsams/0.3/xsams.xsd'
+	locations[1] = '../xsd/xsams/1.0/xsams.xsd'
 	root.set('{%s}schemaLocation' % check.XSI_NS, locations[0] + ' ' + locations[1])
 
 	nodes = XPathEval('//*[child::xsams:RadiativeTransition]')

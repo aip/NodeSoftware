@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../xsd/xsams/0.3/xsams.xsd" xmlns="http://vamdc.org/xml/xsams/0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
+<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../xsd/xsams/1.0/xsams.xsd" xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
 	<Sources>
 		<Source sourceID="BHIT-H2O-nu-30">
 			<Authors>
@@ -95,12 +95,12 @@
 				<MolecularState stateID="SHIT-4927">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">4830.6131</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>35</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>0</nltcs:v1>
@@ -115,12 +115,12 @@
 				<MolecularState stateID="SHIT-4928">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">3870.2014</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>33</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>0</nltcs:v1>
@@ -135,12 +135,12 @@
 				<MolecularState stateID="SHIT-5101">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">12550.2684</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>45</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>1</nltcs:v1>
@@ -155,12 +155,12 @@
 				<MolecularState stateID="SHIT-5102">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">586.2436</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>45</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>0</nltcs:v1>
@@ -202,12 +202,12 @@
 				<MolecularState stateID="SHIT-5099">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">9873.2269</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>45</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>1</nltcs:v1>
@@ -222,12 +222,12 @@
 				<MolecularState stateID="SHIT-5100">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">842.357</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>45</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>0</nltcs:v1>
@@ -269,12 +269,12 @@
 				<MolecularState stateID="SHIT-5103">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">9873.2269</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>45</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>1</nltcs:v1>
@@ -289,12 +289,12 @@
 				<MolecularState stateID="SHIT-5104">
 					<Description/>
 					<MolecularStateCharacterisation>
-						<StateEnergy energyOrigin="Zero-point energy">
+						<StateEnergy energyOrigin="Swadis-Zero">
 							<Value units="1/cm">842.357</Value>
 						</StateEnergy>
 						<TotalStatisticalWeight>45</TotalStatisticalWeight>
 					</MolecularStateCharacterisation>
-					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<nltcs:QNs>
 							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
 							<nltcs:v1>0</nltcs:v1>

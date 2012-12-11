@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<VerificationData xmlns:cml="http://www.xml-cml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/0.3" xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../verification.xsd" >
+<VerificationData xmlns:cml="http://www.xml-cml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/1.0" xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../verification.xsd" >
 	<VerificationResult>
 		<NumberOfMolecularStates correct="4" incorrect="2" total="6" unidentified="0"/>
 		<NumberOfRadiativeTransitions correct="1" incorrect="2" total="3" unidentified="0"/>
@@ -73,12 +73,12 @@
 					<MolecularState stateID="SHIT-6957">
 						<Description/>
 						<MolecularStateCharacterisation>
-							<StateEnergy energyOrigin="Zero-point energy">
+							<StateEnergy energyOrigin="Swadis-Zero">
 								<Value units="1/cm">6823.468</Value>
 							</StateEnergy>
 							<TotalStatisticalWeight>74</TotalStatisticalWeight>
 						</MolecularStateCharacterisation>
-						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/0.3/cases/lpcs">
+						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
 							<lpcs:QNs>
 								<lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
 								<lpcs:vi mode="1">0</lpcs:vi>
@@ -103,12 +103,12 @@
 					<MolecularState stateID="SHIT-6958">
 						<Description/>
 						<MolecularStateCharacterisation>
-							<StateEnergy energyOrigin="Zero-point energy">
+							<StateEnergy energyOrigin="Swadis-Zero">
 								<Value units="1/cm">561.8958</Value>
 							</StateEnergy>
 							<TotalStatisticalWeight>70</TotalStatisticalWeight>
 						</MolecularStateCharacterisation>
-						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/0.3/cases/lpcs">
+						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
 							<lpcs:QNs>
 								<lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
 								<lpcs:vi mode="1">0</lpcs:vi>
@@ -133,12 +133,12 @@
 					<MolecularState stateID="SHIT-6959">
 						<Description/>
 						<MolecularStateCharacterisation>
-							<StateEnergy energyOrigin="Zero-point energy">
+							<StateEnergy energyOrigin="Swadis-Zero">
 								<Value units="1/cm">9891.4191</Value>
 							</StateEnergy>
 							<TotalStatisticalWeight>182</TotalStatisticalWeight>
 						</MolecularStateCharacterisation>
-						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/0.3/cases/lpcs">
+						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
 							<lpcs:QNs>
 								<lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
 								<lpcs:vi mode="1">0</lpcs:vi>
@@ -164,12 +164,12 @@
 					<MolecularState stateID="SHIT-6960">
 						<Description/>
 						<MolecularStateCharacterisation>
-							<StateEnergy energyOrigin="Zero-point energy">
+							<StateEnergy energyOrigin="Swadis-Zero">
 								<Value units="1/cm">3947.6008</Value>
 							</StateEnergy>
 							<TotalStatisticalWeight>186</TotalStatisticalWeight>
 						</MolecularStateCharacterisation>
-						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/0.3/cases/lpcs">
+						<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
 							<lpcs:QNs>
 								<lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
 								<lpcs:vi mode="1">0</lpcs:vi>

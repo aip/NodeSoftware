@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 http://vamdc.org/xml/xsams/0.3" xmlns="http://vamdc.org/xml/xsams/0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
+<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 http://vamdc.org/xml/xsams/1.0" xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
 <!--
    ATTENTION: The amount of data returned may have been truncated by the node.
    The data below represent 100 percent of all available data at this node that
@@ -102,6 +102,7 @@
 					</ChemicalName>
 					<InChI>InChI=1S/N2O/c1-2-3</InChI>
 					<InChIKey>GQPLMRYTRLFLPF-UHFFFAOYSA-N</InChIKey>
+					<VAMDCSpeciesID/>
 					<StableMolecularProperties>
 						<MolecularWeight>
 							<Value units="amu">44.0124</Value>
@@ -111,7 +112,7 @@
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-35-0.0.0.0.0.e-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="ltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/ltcs">
+					<Case xsi:type="case:Case" caseID="ltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/ltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -124,7 +125,7 @@
 				</MolecularState>
 				<MolecularState stateID="Swadis-35-0.0.0.0.1.e-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="ltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/ltcs">
+					<Case xsi:type="case:Case" caseID="ltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/ltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -140,7 +141,7 @@
 	</Species>
 	<Processes>
 		<Radiative>
-			<RadiativeTransition id="Pwadis-11">
+			<RadiativeTransition id="Pwadis-R11">
 				<SourceRef>Bwadis-931</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -154,6 +155,7 @@
 						<Value units="1/s">1.7e-09</Value>
 					</TransitionProbabilityA>
 				</Probability>
+				<ProcessClass/>
 			</RadiativeTransition>
 		</Radiative>
 	</Processes>

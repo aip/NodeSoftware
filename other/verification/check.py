@@ -20,7 +20,7 @@ from mathml.utils import pyterm # register Python term builder
 
 XSI_NS = "http://www.w3.org/2001/XMLSchema-instance"
 XSD_NS = "http://www.w3.org/2001/XMLSchema"
-XSAMS_NS = "http://vamdc.org/xml/xsams/0.3"
+XSAMS_NS = "http://vamdc.org/xml/xsams/1.0"
 MATHML_NS = "http://www.w3.org/1998/Math/MathML"
 
 SUBSTANCES = {#

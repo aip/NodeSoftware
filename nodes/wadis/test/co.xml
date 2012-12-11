@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 http://vamdc.org/xml/xsams/0.3" xmlns="http://vamdc.org/xml/xsams/0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
+<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 http://vamdc.org/xml/xsams/1.0" xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
 <!--
    ATTENTION: The amount of data returned may have been truncated by the node.
    The data below represent 100 percent of all available data at this node that
@@ -48,6 +48,7 @@
 					</ChemicalName>
 					<InChI>InChI=1S/CO/c1-2</InChI>
 					<InChIKey>UGFAIRIUMAVXCW-UHFFFAOYSA-N</InChIKey>
+					<VAMDCSpeciesID/>
 					<StableMolecularProperties>
 						<MolecularWeight>
 							<Value units="amu">28.01</Value>
@@ -57,7 +58,7 @@
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-36-1.4-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="dcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/dcs">
+					<Case xsi:type="case:Case" caseID="dcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/dcs">
 						<case:QNs>
 							<case:v>1</case:v>
 							<case:J>4</case:J>
@@ -66,7 +67,7 @@
 				</MolecularState>
 				<MolecularState stateID="Swadis-36-2.5-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="dcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/dcs">
+					<Case xsi:type="case:Case" caseID="dcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/dcs">
 						<case:QNs>
 							<case:v>2</case:v>
 							<case:J>5</case:J>
@@ -78,7 +79,7 @@
 	</Species>
 	<Processes>
 		<Radiative>
-			<RadiativeTransition id="Pwadis-10763">
+			<RadiativeTransition id="Pwadis-R10763">
 				<SourceRef>Bwadis-1419</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -88,6 +89,7 @@
 				<UpperStateRef>Swadis-36-2.5-1</UpperStateRef>
 				<LowerStateRef>Swadis-36-1.4-2</LowerStateRef>
 				<Probability/>
+				<ProcessClass/>
 			</RadiativeTransition>
 		</Radiative>
 	</Processes>

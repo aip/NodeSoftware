@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 http://vamdc.org/xml/xsams/0.3" xmlns="http://vamdc.org/xml/xsams/0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
+<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 http://vamdc.org/xml/xsams/1.0" xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
 <!--
    ATTENTION: The amount of data returned may have been truncated by the node.
    The data below represent 100 percent of all available data at this node that
@@ -104,6 +104,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 					</ChemicalName>
 					<InChI>InChI=1S/C2H2/c1-2/h1-2H</InChI>
 					<InChIKey>HSFWRNGVRCDJHI-UHFFFAOYSA-N</InChIKey>
+					<VAMDCSpeciesID/>
 					<StableMolecularProperties>
 						<MolecularWeight>
 							<Value units="amu">26.0378</Value>
@@ -113,7 +114,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-110-0.0.0.1.0.1.X.48.g.X.f-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="lpcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/lpcs">
+					<Case xsi:type="case:Case" caseID="lpcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
 						<case:QNs>
 							<case:vi mode="1">0</case:vi>
 							<case:vi mode="2">0</case:vi>
@@ -129,7 +130,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularState>
 				<MolecularState stateID="Swadis-110-0.0.0.1.1.0.X.47.u.0.f-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="lpcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/lpcs">
+					<Case xsi:type="case:Case" caseID="lpcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
 						<case:QNs>
 							<case:vi mode="1">0</case:vi>
 							<case:vi mode="2">0</case:vi>
@@ -149,7 +150,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 	</Species>
 	<Processes>
 		<Radiative>
-			<RadiativeTransition id="Pwadis-298">
+			<RadiativeTransition id="Pwadis-R298">
 				<SourceRef>Bwadis-1606</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -163,6 +164,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 						<Value units="1/s">0.886</Value>
 					</TransitionProbabilityA>
 				</Probability>
+				<ProcessClass/>
 			</RadiativeTransition>
 		</Radiative>
 	</Processes>

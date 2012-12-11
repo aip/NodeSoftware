@@ -13,7 +13,7 @@ from check import printRules
 from test import LocalResolver
 
 parser = etree.XMLParser()
-parser.resolvers.add(LocalResolver({"http://vamdc.org/xml/xsams/0.3/": check.VERIFICATION_PATH + "/xsd/xsams/0.3/xsams.xsd"}))
+parser.resolvers.add(LocalResolver({"http://vamdc.org/xml/xsams/1.0/": check.VERIFICATION_PATH + "/xsd/xsams/1.0/xsams.xsd"}))
 xsd = etree.XMLSchema(etree.parse(check.VERIFICATION_FILE_PATH, parser = parser))
 
 

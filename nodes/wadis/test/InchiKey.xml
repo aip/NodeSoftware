@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xmlns="http://vamdc.org/xml/xsams/0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema" xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 http://vamdc.org/xml/xsams/0.3">
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema" xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 http://vamdc.org/xml/xsams/1.0">
 <!--
    ATTENTION: The amount of data returned may have been truncated by the node.
    The data below represent 100 percent of all available data at this node that
@@ -95,6 +95,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 					</ChemicalName>
 					<InChI>InChI=1S/H2O/h1H2</InChI>
 					<InChIKey>XLYOFNOQVPJJNP-UHFFFAOYSA-N</InChIKey>
+					<VAMDCSpeciesID/>
 					<StableMolecularProperties>
 						<MolecularWeight>
 							<Value units="amu">18.0148</Value>
@@ -104,7 +105,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-21-0.0.0.11.6.5-6">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -117,7 +118,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				</MolecularState>
 				<MolecularState stateID="Swadis-21-0.1.0.10.5.6-5">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>1</case:v2>
@@ -141,6 +142,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 					</ChemicalName>
 					<InChI>InChI=1S/H2S/h1H2/i1+2D2</InChI>
 					<InChIKey>RWSOTUBLDIXVET-IQRQJSDFSA-N</InChIKey>
+					<VAMDCSpeciesID/>
 					<StableMolecularProperties>
 						<MolecularWeight>
 							<Value units="amu">38.0</Value>
@@ -150,7 +152,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-718-0.0.0.5.3.3-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -163,7 +165,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				</MolecularState>
 				<MolecularState stateID="Swadis-718-0.0.0.6.2.4-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -176,7 +178,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				</MolecularState>
 				<MolecularState stateID="Swadis-718-0.0.0.7.1.7-4">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -189,7 +191,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				</MolecularState>
 				<MolecularState stateID="Swadis-718-0.0.0.8.0.8-3">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -205,7 +207,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 	</Species>
 	<Processes>
 		<Radiative>
-			<RadiativeTransition id="Pwadis-70001977">
+			<RadiativeTransition id="Pwadis-R70001977">
 				<SourceRef>Bwadis-1281</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -216,8 +218,9 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				<UpperStateRef>Swadis-718-0.0.0.6.2.4-1</UpperStateRef>
 				<LowerStateRef>Swadis-718-0.0.0.5.3.3-2</LowerStateRef>
 				<Probability/>
+				<ProcessClass/>
 			</RadiativeTransition>
-			<RadiativeTransition id="Pwadis-70001978">
+			<RadiativeTransition id="Pwadis-R70001978">
 				<SourceRef>Bwadis-1281</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -228,8 +231,9 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				<UpperStateRef>Swadis-718-0.0.0.8.0.8-3</UpperStateRef>
 				<LowerStateRef>Swadis-718-0.0.0.7.1.7-4</LowerStateRef>
 				<Probability/>
+				<ProcessClass/>
 			</RadiativeTransition>
-			<RadiativeTransition id="Pwadis-1760760">
+			<RadiativeTransition id="Pwadis-R1760760">
 				<SourceRef>Bwadis-844</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -239,8 +243,9 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				<UpperStateRef>Swadis-21-0.1.0.10.5.6-5</UpperStateRef>
 				<LowerStateRef>Swadis-21-0.0.0.11.6.5-6</LowerStateRef>
 				<Probability/>
+				<ProcessClass/>
 			</RadiativeTransition>
-			<RadiativeTransition id="Pwadis-1501751">
+			<RadiativeTransition id="Pwadis-R1501751">
 				<SourceRef>Bwadis-679</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -251,8 +256,9 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				<UpperStateRef>Swadis-21-0.1.0.10.5.6-5</UpperStateRef>
 				<LowerStateRef>Swadis-21-0.0.0.11.6.5-6</LowerStateRef>
 				<Probability/>
+				<ProcessClass/>
 			</RadiativeTransition>
-			<RadiativeTransition id="Pwadis-1681123">
+			<RadiativeTransition id="Pwadis-R1681123">
 				<SourceRef>Bwadis-679</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -262,6 +268,7 @@ The precise knowledge of these strong atmospheric v&lt;sub&gt;2&lt;/sub&gt; band
 				<UpperStateRef>Swadis-21-0.1.0.10.5.6-5</UpperStateRef>
 				<LowerStateRef>Swadis-21-0.0.0.11.6.5-6</LowerStateRef>
 				<Probability/>
+				<ProcessClass/>
 			</RadiativeTransition>
 		</Radiative>
 	</Processes>

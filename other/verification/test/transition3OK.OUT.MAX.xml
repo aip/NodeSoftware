@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<VerificationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/0.3" xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 ../verification.xsd">
+<VerificationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/1.0" xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../verification.xsd">
 	<VerificationResult>
 		<NumberOfRadiativeTransitions correct="0" incorrect="1" total="3" unidentified="2"/>
 		<NumberOfVerificationByRule name="atomRuleT01" correct="1" incorrect="2" unidentified="0"/>
@@ -369,6 +369,7 @@
 							<Value units="unitless">-3.090</Value>
 						</Log10WeightedOscillatorStrength>
 					</Probability>
+				<ProcessClass/>
 					<Verification>
 						<atomRuleT01>false</atomRuleT01>
 						<atomRuleT02 xsi:nil="true"/>
@@ -393,6 +394,7 @@
 							<Value units="unitless">-1.035</Value>
 						</Log10WeightedOscillatorStrength>
 					</Probability>
+				<ProcessClass/>
 					<Verification>
 						<atomRuleT01>true</atomRuleT01>
 						<atomRuleT02 xsi:nil="true"/>
@@ -415,6 +417,7 @@
 							<Value units="unitless">-2.270</Value>
 						</Log10WeightedOscillatorStrength>
 					</Probability>
+				<ProcessClass/>
 					<Verification>
 						<atomRuleT01>false</atomRuleT01>
 						<atomRuleT02>false</atomRuleT02>

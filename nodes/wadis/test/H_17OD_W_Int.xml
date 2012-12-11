@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/0.3 http://vamdc.org/xml/xsams/0.3" xmlns="http://vamdc.org/xml/xsams/0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
+<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 http://vamdc.org/xml/xsams/1.0" xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
 <!--
    ATTENTION: The amount of data returned may have been truncated by the node.
    The data below represent 100 percent of all available data at this node that
@@ -104,6 +104,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 					</ChemicalName>
 					<InChI>InChI=1S/H2O/h1H2/i1+1/hD</InChI>
 					<InChIKey>XLYOFNOQVPJJNP-XKYOGGAFSA-N</InChIKey>
+					<VAMDCSpeciesID/>
 					<StableMolecularProperties>
 						<MolecularWeight>
 							<Value units="amu">20.0079</Value>
@@ -113,7 +114,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-165-0.0.0.5.4.1-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -126,7 +127,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularState>
 				<MolecularState stateID="Swadis-165-0.0.0.5.4.2-4">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>0</case:v2>
@@ -139,7 +140,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularState>
 				<MolecularState stateID="Swadis-165-0.1.0.4.3.1-3">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>1</case:v2>
@@ -152,7 +153,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularState>
 				<MolecularState stateID="Swadis-165-0.1.0.4.3.2-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/0.3/cases/nltcs">
+					<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 						<case:QNs>
 							<case:v1>0</case:v1>
 							<case:v2>1</case:v2>
@@ -168,7 +169,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 	</Species>
 	<Processes>
 		<Radiative>
-			<RadiativeTransition id="Pwadis-1071828476">
+			<RadiativeTransition id="Pwadis-R1071828476">
 				<SourceRef>Bwadis-1606</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -183,8 +184,9 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 						<Value units="undef">2.384e-27</Value>
 					</IdealisedIntensity>
 				</Probability>
+				<ProcessClass/>
 			</RadiativeTransition>
-			<RadiativeTransition id="Pwadis-1071828477">
+			<RadiativeTransition id="Pwadis-R1071828477">
 				<SourceRef>Bwadis-1606</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
@@ -199,6 +201,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 						<Value units="undef">2.384e-27</Value>
 					</IdealisedIntensity>
 				</Probability>
+				<ProcessClass/>
 			</RadiativeTransition>
 		</Radiative>
 	</Processes>
