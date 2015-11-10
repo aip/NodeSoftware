@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 import re
+import cgi
 from django.db import models
+
+
+def strip(str):
+	if str:
+		str = re.sub('<[^>]*>', ' ', str)
+		str = re.sub('&lt;(?:(?!&gt;).)*&gt;', ' ', str)
+		str = re.sub('&\S*;', ' ', str)
+	return str
 
 
 class Biblios(models.Model):
@@ -40,6 +49,10 @@ class Biblios(models.Model):
 
 
 	def getSourceName(self):
+		self.bibliodigest = strip(self.bibliodigest)
+		self.bibliopublisher = strip(self.bibliopublisher)
+		self.bibliojournal = strip(self.bibliojournal)
+		self.bibliolocality = strip(self.bibliolocality)
 		if self.bibliotype == 1:
 			return  (self.bibliodigest + ". " if self.bibliodigest else "") + (self.bibliopublisher + ", " if self.bibliopublisher else "") + (self.bibliolocality if self.bibliolocality else "")
 		elif self.bibliotype == 2:
@@ -53,6 +66,8 @@ class Biblios(models.Model):
 
 
 	def getArticleNumber(self):
+		self.biblionumber = cgi.escape(self.biblionumber)
+		self.biblioissue = cgi.escape(self.biblioissue)
 		if self.biblionumber and self.biblionumber != "0":
 			return self.biblionumber
 		elif self.biblioissue and self.biblioissue != "0":
@@ -62,7 +77,7 @@ class Biblios(models.Model):
 
 
 	def getPagesPattern(self):
-		return re.compile(r"-")
+		return re.compile(r"-|&ndash;|&#8722;")
 
 
 	def getReportPattern(self):
@@ -126,6 +141,7 @@ class Biblios(models.Model):
 
 
 	def getAuthorList(self):
+		self.biblioauthors = strip(self.biblioauthors)
 		patternObj = re.compile(r"(?<!&\w)(?<!&\w{2})(?<!&\w{3})(?<!&\w{4})(?<!&\w{5})(?<!&\w{6})(?<!&\w{7})(?<!&\w{8})(?<!&#\d)(?<!&#\d{2})(?<!&#\d{3})(?<!&#\d{4})(?<!&#\d{5});")
 		return [name.strip() for name in (patternObj.split(self.biblioauthors) if (patternObj.search(self.biblioauthors)) else re.split(r",| and ", self.biblioauthors))]
 

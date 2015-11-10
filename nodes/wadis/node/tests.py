@@ -2,6 +2,7 @@ import sys
 from django.http import QueryDict, HttpRequest
 from django.utils.importlib import import_module
 from lxml import objectify, etree
+from django.db import connections
 
 from django.conf import settings
 #Warning! Forced DEBUG = FALSE in DjangoTestSuiteRunner->setup_test_environment->settings.DEBUG = False
@@ -19,7 +20,7 @@ if 'NodeID' in DICTS.RETURNABLES:
 else:
 	NODEID = 'fake'
 
-DEBUG = False
+DEBUG = True
 try:
 	from django.utils.unittest import TestCase
 except ImportError:
@@ -45,6 +46,15 @@ from other.verification.check import RulesParser, Rule
 
 
 testClient = Client()
+
+
+def print_all_queries(databases=[]):
+	for x in connections:
+		if not databases or x in databases:
+			print x
+			for query in connections[x].queries:
+				print query['time']
+				print query['sql']
 
 
 def toDict(queryDict):
@@ -76,9 +86,9 @@ def getBigFile():
 	request.REQUEST = toDict(QueryDict(query))
 
 	return views.sync(request).content
-getBigFile()
+#getBigFile()
 
-
+'''
 class VerificationTest(TestCase):
 	prefixURL = "/tap/sync?"
 	query = 'LANG=VSS1&FORMAT=VERIFICATION&QUERY=SELECT All WHERE InChI =\'InChI=1S/H2O/h1H2/i/hD\' AND RadTransWavenumber > 1250.846 AND RadTransWavenumber < 1250.847'
@@ -187,7 +197,7 @@ class VerificationTest(TestCase):
 	def tearDown(self):
 		queryfunc.rules = None
 		pass
-
+'''
 
 
 class TapSyncTest(TestCase):
@@ -205,8 +215,7 @@ class TapSyncTest(TestCase):
 		self.request.META["QUERY_STRING"] = self.query
 
 		self.queryDict = toDict(QueryDict(self.query))
-
-
+	'''
 	def testGetSources(self):
 		settings.DEBUG = DEBUG
 
@@ -214,7 +223,36 @@ class TapSyncTest(TestCase):
 		sources = queryfunc.getSources(transitions)
 		if len(sources) == 1:
 			self.assertEquals('2', sources[0].getArticleNumber())
-			authors = [u'L.S. Rothman', u'D. Jacquemart', u'A. Barbe', u'D.C. Benner', u'M. Birk', u'L.R. Brown', u'M. Carleer', u'C.Chackerian Jr', u'K. Chance', u'L.H. Coudert', u'V. Dana', u'V.M. Devi', u'J.-M. Flaud', u'R.R. Gamache', u'A.Goldman', u'J.-M. Hartmann', u'K.W. Jucks', u'A.G. Maki', u'etc']
+			authors = [u'L.S. Rothman',
+					   u'D. Jacquemart',
+					   u'A. Barbe',
+					   u'D.C. Benner',
+					   u'M. Birk',
+					   u'L.R. Brown',
+					   u'M. Carleer',
+					   u'C.Chackerian Jr',
+					   u'K. Chance',
+					   u'L.H. Coudert',
+					   u'V. Dana',
+					   u'V.M. Devi',
+					   u'J.-M. Flaud',
+					   u'R.R. Gamache',
+					   u'A.Goldman',
+					   u'J.-M. Hartmann',
+					   u'K.W. Jucks',
+					   u'A.G. Maki',
+					   u'J.-Y. Mandin',
+					   u'S.T. Massie',
+					   u'J. Orphal',
+					   u'A. Perrin',
+					   u'C.P. Rinsland',
+					   u'M.A.H. Smith',
+					   u'J. Tennyson',
+					   u'R.N. Tolchenov',
+					   u'R.A. Toth',
+					   u'J. Vander Auwera',
+					   u'P. Varanasi',
+					   u'G. Wagner']
 			self.assertEquals(authors, sources[0].getAuthorList())
 			self.assertEquals('journal', sources[0].biblioTypeName)
 			self.assertRegexpMatches(sources[0].biblioannotation, r" HITRAN ")
@@ -229,6 +267,7 @@ class TapSyncTest(TestCase):
 			self.assertEquals(2005, sources[0].biblioyear)
 		else:
 			self.fail("Sources is empty")
+
 
 	def testSyncWavelength(self):
 		settings.DEBUG = DEBUG
@@ -257,7 +296,6 @@ class TapSyncTest(TestCase):
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/co2.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
 
-
 	def testSyncSelectSaga2_n2o(self):
 		settings.DEBUG = DEBUG
 		sql = "SELECT All WHERE ((Inchi='InChI=1S/N2O/c1-2-3'  AND RadTransWavenumber > 0.838 AND RadTransWavenumber < 0.839) AND MethodCategory = 'experiment')"
@@ -272,7 +310,6 @@ class TapSyncTest(TestCase):
 
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/n2o.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
-
 
 	def testSyncSelectSaga2_c2h2(self):
 		settings.DEBUG = DEBUG
@@ -289,7 +326,6 @@ class TapSyncTest(TestCase):
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/c2h2.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
 
-
 	def testSyncSelectSaga2_nh3(self):
 		settings.DEBUG = DEBUG
 		sql = "SELECT All WHERE ((Inchi='InChI=1S/H3N/h1H3'  AND RadTransWavenumber > 4300 AND RadTransWavenumber < 4301) AND MethodCategory = 'experiment')"
@@ -299,7 +335,6 @@ class TapSyncTest(TestCase):
 		content = views.sync(self.request).content
 		objTree = objectify.fromstring(content)
 		xsamsXSD.assertValid(objTree)
-
 
 	def testSyncSelectSaga2_co(self):
 		settings.DEBUG = DEBUG
@@ -315,7 +350,6 @@ class TapSyncTest(TestCase):
 
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/co.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
-
 
 	def testSyncSelectMoleculeEnergy(self):
 		settings.DEBUG = DEBUG
@@ -364,7 +398,7 @@ class TapSyncTest(TestCase):
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/H_17OD_W_Int.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
 
-
+	'''
 	def testSyncSelectMoleculeInchiKey(self):
 		settings.DEBUG = DEBUG
 		sql = "SELECT All WHERE (InchiKey='RWSOTUBLDIXVET-IQRQJSDFSA-N'  AND RadTransWavenumber > 40 AND RadTransWavenumber < 45) OR (Inchi IN ('InChI=1S/H2O/h1H2') AND RadTransWavenumber > 1239.2185 AND RadTransWavenumber < 1239.2191)"
@@ -372,6 +406,7 @@ class TapSyncTest(TestCase):
 		self.request.REQUEST = self.queryDict
 
 		objTree = objectify.fromstring(views.sync(self.request).content)
+		print_all_queries()
 		removeSelfSource(objTree)
 		actual = etree.tostring(objTree, pretty_print=True)
 		xsamsXSD.assertValid(objTree)
@@ -379,7 +414,7 @@ class TapSyncTest(TestCase):
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/InchiKey.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
 
-
+	'''
 	def testSelectMoleculeInchiKey(self):
 		sql = "SELECT+All+WHERE+InchiKey='RWSOTUBLDIXVET-IQRQJSDFSA-N'"
 		objTree = objectify.fromstring(testClient.get(self.prefixURL + self.query + sql.strip()).content)
@@ -390,13 +425,13 @@ class TapSyncTest(TestCase):
 		sql = "SELECT+All+WHERE+RadTransWavenumber+>+1239+AND+RadTransWavenumber+<+1240"
 		objTree = objectify.fromstring(testClient.get(self.prefixURL + self.query + sql.strip()).content)
 		xsamsXSD.assertValid(objTree)
-
+	'''
 
 	def tearDown(self):
 		pass
 
 
-
+'''
 class TransformsTestCase(TestCase):
 	def setUp(self):
 		pass
@@ -458,7 +493,7 @@ class InchiTestCase(TestCase):
 
 	def tearDown(self):
 		pass
-
+'''
 
 
 def suite():

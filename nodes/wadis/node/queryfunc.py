@@ -48,11 +48,17 @@ def getSources(items):
 			biblio.biblioyear = biblio.biblioyear if biblio.biblioyear > 1000 else 1000 + biblio.biblioyear
 			biblio.biblioTypeName = 'journal'
 			if biblio.biblioname:
-				biblio.biblioname = cgi.escape(biblio.biblioname)
+				biblio.biblioname = atmos.strip(biblio.biblioname)
 			if biblio.bibliodigest:
-				biblio.bibliodigest = cgi.escape(biblio.bibliodigest)
+				biblio.bibliodigest = atmos.strip(biblio.bibliodigest)
 			if biblio.biblioannotation:
-				biblio.biblioannotation = cgi.escape(biblio.biblioannotation)
+				biblio.biblioannotation = atmos.strip(biblio.biblioannotation)
+			if biblio.bibliovolume:
+				biblio.bibliovolume = cgi.escape(biblio.bibliovolume)
+			if biblio.bibliodoi:
+				biblio.bibliodoi = atmos.strip(biblio.bibliodoi)
+			if biblio.bibliourl:
+				biblio.bibliourl = cgi.escape(biblio.bibliourl)
 
 			if biblio.bibliotype == 1:
 				if biblio.getThesisPattern().search(biblio.biblioname) is not None:

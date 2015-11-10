@@ -6,6 +6,7 @@ defaultList = {'id_substance':('exact','1000021')}
 def makeQ(q, tuple):
 	defaultFlag = formatQ(q, tuple, True)
 	q &= Q(**{'id_%s_ds__status__exact' % tuple[0]:'public'})
+	q &= Q(**{'id_%s_ds__type__exact' % tuple[0]:'1'})
 	if defaultFlag:
 		for field in defaultList:
 			q &= Q(**{field + '__' + defaultList[field][0]: defaultList[field][1]})
