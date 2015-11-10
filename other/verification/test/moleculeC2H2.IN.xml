@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:cml="http://www.xml-cml.org/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../xsd/xsams/1.0/xsams.xsd">
+<XSAMSData  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 ../xsd/xsams/1.0/xsams.xsd" xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:cml="http://www.xml-cml.org/schema">
 	<Sources>
 		<Source sourceID="BHIT-C2H2-nu-2">
 			<Authors>
@@ -58,6 +58,29 @@
 					<StableMolecularProperties/>
 					<Comment>C2H2</Comment>
 				</MolecularChemicalSpecies>
+				<MolecularState stateID="Swadis-Zero">
+					<Description/>
+					<MolecularStateCharacterisation>
+						<StateEnergy energyOrigin="Swadis-Zero">
+							<Value units="1/cm">0</Value>
+						</StateEnergy>
+					</MolecularStateCharacterisation>
+					<Case xsi:type="lpcs:Case" caseID="lpcs" xmlns:lpcs="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
+						<lpcs:QNs>
+							<lpcs:ElecStateLabel>X</lpcs:ElecStateLabel>
+							<lpcs:vi mode="1">0</lpcs:vi>
+							<lpcs:vi mode="2">0</lpcs:vi>
+							<lpcs:vi mode="3">0</lpcs:vi>
+							<lpcs:vi mode="4">0</lpcs:vi>
+							<lpcs:vi mode="5">0</lpcs:vi>
+							<lpcs:l>0</lpcs:l>
+							<lpcs:vibInv>g</lpcs:vibInv>
+							<lpcs:J>0</lpcs:J>
+							<lpcs:parity>+</lpcs:parity>
+							<lpcs:kronigParity>e</lpcs:kronigParity>
+						</lpcs:QNs>
+					</Case>
+				</MolecularState>
 				<MolecularState stateID="SHIT-6957">
 					<Description/>
 					<MolecularStateCharacterisation>

@@ -31,7 +31,7 @@ class VerificationTestCase(unittest.TestCase):
 		numberElements = tree.xpath('//xsams:NumberOfVerificationByRule[@name = "aRuleS01"]', namespaces={"xsams":XSAMS_NS})
 		self.assertEquals(1, len(numberElements))
 		for numberElement in numberElements:
-			self.assertEquals("5", numberElement.attrib["correct"])
+			self.assertEquals("6", numberElement.attrib["correct"])
 			self.assertEquals("3", numberElement.attrib["incorrect"])
 
 

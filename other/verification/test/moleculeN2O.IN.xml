@@ -45,6 +45,25 @@
 					<StableMolecularProperties/>
 					<Comment>(15N)(14N)(16O)</Comment>
 				</MolecularChemicalSpecies>
+				<MolecularState stateID="Swadis-Zero">
+					<Description/>
+					<MolecularStateCharacterisation>
+						<StateEnergy energyOrigin="Swadis-Zero">
+							<Value units="1/cm">0</Value>
+						</StateEnergy>
+					</MolecularStateCharacterisation>
+					<Case caseID="ltcs" xmlns:ltcs="http://vamdc.org/xml/xsams/1.0/cases/ltcs" xsi:type="ltcs:Case">
+						<ltcs:QNs>
+							<ltcs:ElecStateLabel>X</ltcs:ElecStateLabel>
+							<ltcs:v1>0</ltcs:v1>
+							<ltcs:v2>0</ltcs:v2>
+							<ltcs:l2>0</ltcs:l2>
+							<ltcs:v3>0</ltcs:v3>
+							<ltcs:J>0</ltcs:J>
+							<ltcs:kronigParity>e</ltcs:kronigParity>
+						</ltcs:QNs>
+					</Case>
+				</MolecularState>
 				<MolecularState stateID="SHIT-6265">
 					<Description/>
 					<MolecularStateCharacterisation>

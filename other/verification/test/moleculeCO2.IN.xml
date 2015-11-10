@@ -83,6 +83,25 @@
 					<StableMolecularProperties/>
 					<Comment>(16O)(13C)(18O)</Comment>
 				</MolecularChemicalSpecies>
+				<MolecularState stateID="Swadis-Zero">
+					<Description/>
+					<MolecularStateCharacterisation>
+						<StateEnergy energyOrigin="Swadis-Zero">
+							<Value units="1/cm">0</Value>
+						</StateEnergy>
+					</MolecularStateCharacterisation>
+					<Case xsi:type="ltcs:Case" caseID="ltcs" xmlns:ltcs="http://vamdc.org/xml/xsams/1.0/cases/ltcs">
+						<ltcs:QNs>
+							<ltcs:ElecStateLabel>X</ltcs:ElecStateLabel>
+							<ltcs:v1>0</ltcs:v1>
+							<ltcs:l2>0</ltcs:l2>
+							<ltcs:v3>0</ltcs:v3>
+							<ltcs:J>0</ltcs:J>
+							<ltcs:r name="Fermi resonance rank">0</ltcs:r>
+							<ltcs:kronigParity>e</ltcs:kronigParity>
+						</ltcs:QNs>
+					</Case>
+				</MolecularState>
 				<MolecularState stateID="SHIT-2721">
 					<Description/>
 					<MolecularStateCharacterisation>

@@ -61,6 +61,21 @@
 						<StableMolecularProperties/>
 						<Comment>(13C)(16O)</Comment>
 					</MolecularChemicalSpecies>
+					<MolecularState stateID="Swadis-Zero">
+						<Description/>
+						<MolecularStateCharacterisation>
+							<StateEnergy energyOrigin="Swadis-Zero">
+								<Value units="1/cm">0</Value>
+							</StateEnergy>
+						</MolecularStateCharacterisation>
+						<Case caseID="dcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/dcs" xsi:type="case:Case">
+							<case:QNs>
+								<case:ElecStateLabel>X</case:ElecStateLabel>
+								<case:v>0</case:v>
+								<case:J>0</case:J>
+							</case:QNs>
+						</Case>
+					</MolecularState>
 					<MolecularState stateID="SHIT-6957">
 						<Description/>
 						<MolecularStateCharacterisation>

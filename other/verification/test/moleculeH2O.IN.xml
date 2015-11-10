@@ -92,6 +92,25 @@
 					<StableMolecularProperties/>
 					<Comment>H2(16O)</Comment>
 				</MolecularChemicalSpecies>
+				<MolecularState stateID="Swadis-Zero">
+					<Description/>
+					<MolecularStateCharacterisation>
+						<StateEnergy energyOrigin="Swadis-Zero">
+							<Value units="1/cm">0</Value>
+						</StateEnergy>
+					</MolecularStateCharacterisation>
+					<Case xsi:type="nltcs:Case" caseID="nltcs" xmlns:nltcs="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
+						<nltcs:QNs>
+							<nltcs:ElecStateLabel>X</nltcs:ElecStateLabel>
+							<nltcs:v1>0</nltcs:v1>
+							<nltcs:v2>0</nltcs:v2>
+							<nltcs:v3>0</nltcs:v3>
+							<nltcs:J>0</nltcs:J>
+							<nltcs:Ka>0</nltcs:Ka>
+							<nltcs:Kc>0</nltcs:Kc>
+						</nltcs:QNs>
+					</Case>
+				</MolecularState>
 				<MolecularState stateID="SHIT-4927">
 					<Description/>
 					<MolecularStateCharacterisation>

@@ -104,7 +104,7 @@ class Verification:
 
 
 	def _removeRedundantNodes(self, bad = True):
-		self.whiteListOfRefs = {}
+		self.whiteListOfRefs = set()
 		parentsOfNodesWithVerification = {}
 
 		verXPath = '/xsams:Verification[' + ('' if bad else 'not(') + 'contains(self::node(),  "false") or descendant-or-self::node()/attribute::xsi:nil' + ('' if bad else ')') + ']'
@@ -122,10 +122,10 @@ class Verification:
 					if refNode.attrib:
 						for attribute in refNode.attrib:
 							if attribute.endswith('Ref'):
-								self.whiteListOfRefs[refNode.attrib[attribute]] = None
+								self.whiteListOfRefs.add(refNode.attrib[attribute])
 					elif refNode.tag.endswith('Ref'):
 						if refNode.text is not None:
-							self.whiteListOfRefs[refNode.text] = None
+							self.whiteListOfRefs.add(refNode.text)
 
 				parentsOfNodesWithVerification[nodeWithVerification.getparent()] = None
 		else:
@@ -135,7 +135,9 @@ class Verification:
 		for parentOfNodesWithVerification in parentsOfNodesWithVerification:
 			for attribute in parentOfNodesWithVerification.attrib:
 				if attribute.endswith('ID'):
-					self.whiteListOfRefs[parentOfNodesWithVerification.attrib[attribute]] = None
+					self.whiteListOfRefs.add(parentOfNodesWithVerification.attrib[attribute])
+					for stateEnergyNode in parentOfNodesWithVerification.xpath('descendant::node()[local-name(@*) = "energyOrigin"]'):
+						self.whiteListOfRefs.add(stateEnergyNode.get("energyOrigin"))
 
 		self._removeRedundantParentNodes(parentsOfNodesWithVerification, self.tree, bad)
 
@@ -171,15 +173,16 @@ class Verification:
 									break
 							elif childNode.tag == '{%s}VerificationResult' % XSAMS_NS:
 								pass
-
 							else:
 								for idNode in childNode.xpath('descendant-or-self::node()[contains(local-name(@*), "ID")]'):
 									for attribute in idNode.attrib:
 										if attribute.endswith('ID'):
 											hasIDs = True
-											if self.whiteListOfRefs.has_key(idNode.attrib[attribute]):
+											if idNode.attrib[attribute] in self.whiteListOfRefs:
 												isRedundantNode = False
 												idNodes[idNode] = None
+												for stateEnergyNode in idNode.xpath('descendant::node()[local-name(@*) = "energyOrigin"]'):
+													self.whiteListOfRefs.add(stateEnergyNode.get("energyOrigin"))
 
 							if isRedundantNode:
 								if hasIDs or not (childNode.tag in singleUseNodeNames):
