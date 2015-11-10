@@ -12,8 +12,8 @@ class EnergyDs(EnergyDataSource):
 class Energy(EnergyData):
 	id_energy_ds = models.ForeignKey(EnergyDs, db_column = 'id_energy_ds')
 	ident = models.CharField(max_length = 20, blank = True)
-	ident_f = models.IntegerField()
-	calc_f = models.IntegerField()
+	ident_flags = models.IntegerField()
+	calc_flags = models.IntegerField()
 
 
 	def qns(self):
@@ -49,8 +49,8 @@ class Transition(TransitionDataW):
 	ident_up_j = models.IntegerField(null = True, blank = True)
 	ident_up_sym = models.CharField(max_length = 1, blank = True)
 	ident_br = models.CharField(max_length = 1, blank = True)
-	ident_f = models.IntegerField()
-	calc_f = models.IntegerField()
+	ident_flags = models.IntegerField()
+	calc_flags = models.IntegerField()
 
 
 	def up(self):
@@ -87,8 +87,8 @@ class Lineprof(LineprofData):
 	ident_up_sym = models.CharField(max_length = 1, blank = True)
 	ident_up_j = models.IntegerField(null = True, blank = True)
 	ident_br = models.CharField(max_length = 1, blank = True)
-	ident_f = models.IntegerField()
-	calc_f = models.IntegerField()
+	ident_flags = models.IntegerField()
+	calc_flags = models.IntegerField()
 
 
 	def up(self):
