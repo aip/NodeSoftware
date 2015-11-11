@@ -11,31 +11,38 @@ __author__ = 'aip'
 
 class LocalResolver(etree.Resolver):
 
-	def __init__(self, localMap, *args, **kwargs):
+	def __init__(self, schemaMap, *args, **kwargs):
 		etree.Resolver.__init__(self, *args, **kwargs)
-		self.localMap = localMap
+		self.schemaMap = schemaMap
 
 	def checkHTTPContent(self, url):
 		response = urllib2.urlopen(url)
 		if 'Content-Type' in response.info():
-			if response.info()['Content-Type'] != 'application/xml':
+			if response.info()['Content-Type'].find('application/xml') < 0:
 				raise Exception('Incorrect content on the "'  + url + '" link')
 
 
 	def resolve(self, url, id, context):
 		newURL = ''
 
-		if url in self.localMap:
-			newURL = self.localMap[url]
-			if newURL.find('http://') > -1:
-				try:
-					self.checkHTTPContent(newURL)
+		for schemaURL, schemaLocal in self.schemaMap.iteritems():
+			if url.find(schemaURL) == 0:
+				if len(url) == len(schemaURL):
+					newURL = schemaLocal
+				else:
+					schemaLocal = schemaLocal.rpartition('/')[0] + '/'
+					newURL = schemaLocal + url[len(schemaURL):]
+				if newURL.find('http://') > -1:
+					try:
+						self.checkHTTPContent(newURL)
+						url = newURL
+						break;
+					except Exception, e:
+						if url == newURL:
+							print e
+				elif os.path.exists(newURL):
 					url = newURL
-				except Exception, e:
-					if url == newURL:
-						print e
-			elif os.path.exists(newURL):
-				url = newURL
+					break;
 
 		if url != newURL:
 			if url.find('http://') > -1:
