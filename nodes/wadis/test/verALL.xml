@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VerificationData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 https://raw.github.com/VAMDC/NodeSoftware/master/other/verification/verification.xsd" xmlns:cml="http://www.xml-cml.org/schema"
+<VerificationData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 https://raw.github.com/aip/NodeSoftware/master/other/verification/verification.xsd" xmlns:cml="http://www.xml-cml.org/schema"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/1.0">
 <VerificationResult>
 	<NumberOfMolecularStates correct="2" incorrect="1" total="3" unidentified="0"/>
-	<NumberOfRadiativeTransitions correct="5" incorrect="1" total="6" unidentified="0"/>
+	<NumberOfRadiativeTransitions correct="3" incorrect="1" total="4" unidentified="0"/>
 	<NumberOfVerificationByRule name="nltcsRuleS01" correct="2" incorrect="1" unidentified="0"/>
-	<NumberOfVerificationByRule name="nltcsRuleT01" correct="6" incorrect="0" unidentified="0"/>
-	<NumberOfVerificationByRule name="nltcsRuleT02" correct="5" incorrect="1" unidentified="0"/>
+	<NumberOfVerificationByRule name="nltcsRuleT01" correct="4" incorrect="0" unidentified="0"/>
+	<NumberOfVerificationByRule name="nltcsRuleT02" correct="3" incorrect="1" unidentified="0"/>
 </VerificationResult>
 <XSAMSData><!--
    ATTENTION: The amount of data returned may have been truncated by the node.
@@ -26,7 +26,7 @@
 				<Name>V.M. Devi D.C. Benner</Name>
 			</Author>
 		</Authors>
-		<Title>Measurements of Lorentz-Broadening Coefficients and Pressure-Induced Line Shift Coefficients in the v&lt;sub&gt;2&lt;/sub&gt; Band of HD&lt;sup&gt;16&lt;/sup&gt;0</Title>
+		<Title>Measurements of Lorentz-Broadening Coefficients and Pressure-Induced Line Shift Coefficients in the v 2  Band of HD 16 0</Title>
 		<Category>journal</Category>
 		<Year>1991</Year>
 		<SourceName>Journal of Molecular Spectroscopy</SourceName>
@@ -35,45 +35,13 @@
 		<PageEnd>646</PageEnd>
 		<DigitalObjectIdentifier>10.1016/0022-2852(91)90255-9</DigitalObjectIdentifier>
 	</Source>
-	<Source sourceID="Bwadis-1032">
-		<Authors>
-			<Author>
-				<Name>T. Parekunnel</Name>
-			</Author>
-			<Author>
-				<Name>P. F. Bernath</Name>
-			</Author>
-			<Author>
-				<Name>N. F. Zobov</Name>
-			</Author>
-			<Author>
-				<Name>S. V. Shirin</Name>
-			</Author>
-			<Author>
-				<Name>Oleg L. Polyansky</Name>
-			</Author>
-			<Author>
-				<Name>Jonathan Tennyson</Name>
-			</Author>
-		</Authors>
-		<Title>Emission Spectrum of Hot HDO in the 380–2190 cm&lt;sup&gt;-1&lt;/sup&gt; Region</Title>
-		<Category>journal</Category>
-		<Year>2001</Year>
-		<SourceName>Journal of Molecular Spectroscopy</SourceName>
-		<Volume>210</Volume>
-		<PageBegin>28–40</PageBegin>
-		<PageEnd>28–40</PageEnd>
-		<ArticleNumber>1</ArticleNumber>
-		<DigitalObjectIdentifier>10.1006/jmsp.2001.8434</DigitalObjectIdentifier>
-		<Comments>&lt;p&gt;Fourier transform emission spectra were recorded using a mixture of H&lt;sub&gt;2&lt;/sub&gt;O and D&lt;sub&gt;2&lt;/sub&gt;O at a temperature of 1500&amp;deg;C. The spectra were recorded in three overlapping sections and cover the wavenumber range 380&amp;ndash;2190 cm&lt;sup&gt;-1&lt;/sup&gt;. A total of 22 106 lines were measured, of which 60% are thought to belong to HDO. A total of 6430 HDO transitions are assigned, including the first transitions to the (040) vibrational state, with a term value of 5420.042 cm&lt;sup&gt;-1&lt;/sup&gt;. A total of 1536 new energy levels of HDO belonging to the (000), (010), (020), (030), and (040) states are presented, significantly extending the degree of rotational excitation compared to previous studies.&lt;/p&gt;</Comments>
-	</Source>
 	<Source sourceID="Bwadis-874">
 		<Authors>
 			<Author>
 				<Name>R.A.Toth</Name>
 			</Author>
 		</Authors>
-		<Title>HD&lt;sup&gt;16&lt;/sup&gt;O, HD&lt;sup&gt;18&lt;/sup&gt;O, and HD&lt;sup&gt;17&lt;/sup&gt;O Transition Frequencies and Strengths in the v&lt;sub&gt;2&lt;/sub&gt; Bands</Title>
+		<Title>HD 16 O, HD 18 O, and HD 17 O Transition Frequencies and Strengths in the v 2  Bands</Title>
 		<Category>journal</Category>
 		<Year>1993</Year>
 		<SourceName>Journal of Molecular Spectroscopy</SourceName>
@@ -82,42 +50,7 @@
 		<PageEnd>40</PageEnd>
 		<ArticleNumber>1</ArticleNumber>
 		<DigitalObjectIdentifier>10.1006/jmsp.1993.1266</DigitalObjectIdentifier>
-		<Comments>&lt;p&gt;Measurements of line positions and absolute linestrengths of HDO in the &amp;nu;&lt;sub&gt;2&lt;/sub&gt; band were made with a Fourier-transform spectrometer at a resolution of 5&amp;times;10&lt;sup&gt;-3&lt;/sup&gt; cm&lt;sup&gt;-1&lt;/sup&gt;. The measured line previous term frequencies next term of HD&lt;sup&gt;16&lt;/sup&gt;O and HD&lt;sup&gt;18&lt;/sup&gt;O were used along with additional data taken from studies of pure rotational previous termtransitionsnext term in an analysis to obtain rotational energies of levels in the (000) and (010) states. Measurements of the linestrengths were fitted by least-squares and the results are in excellent agreement with the 1113 and 651 experimental previous termtransitionsnext term of HD&lt;sup&gt;16&lt;/sup&gt;O and HD&lt;sup&gt;18&lt;/sup&gt;O, respectively, included in the analyses. These results provide a more accurate representation of the line positions and linestrengths for the (010)-(000) band than that which is currently available on the HITRAN absorption line parameter compilation. Over 370 HD&lt;sup&gt;17&lt;/sup&gt;O previous termtransition frequenciesnext term were measured and analyzed to obtain rotational energies of levels in the (000) and (010) states.&lt;/p&gt;</Comments>
-	</Source>
-	<Source sourceID="Bwadis-1066">
-		<Authors>
-			<Author>
-				<Name>A. Janca</Name>
-			</Author>
-			<Author>
-				<Name>K. Tereszchuk</Name>
-			</Author>
-			<Author>
-				<Name>P. F. Bernath</Name>
-			</Author>
-			<Author>
-				<Name>N. F. Zobov</Name>
-			</Author>
-			<Author>
-				<Name>S. V. Shirin</Name>
-			</Author>
-			<Author>
-				<Name>O. L. Polyansky</Name>
-			</Author>
-			<Author>
-				<Name>J. Tennyson</Name>
-			</Author>
-		</Authors>
-		<Title>Emission spectrum of hot HDO below 4000 cm&lt;sup&gt;-1&lt;/sup&gt;</Title>
-		<Category>journal</Category>
-		<Year>2003</Year>
-		<SourceName>Journal of Molecular Spectroscopy</SourceName>
-		<Volume>219</Volume>
-		<PageBegin>132</PageBegin>
-		<PageEnd>135</PageEnd>
-		<ArticleNumber>1</ArticleNumber>
-		<DigitalObjectIdentifier>10.1016/S0022-2852(03)00015-8</DigitalObjectIdentifier>
-		<Comments>&lt;p&gt;Fourier transform emission spectra were recorded using a mixture of H&lt;sub&gt;2&lt;/sub&gt;O and D&lt;sub&gt;2&lt;/sub&gt;O at a temperature of 1500&amp;deg;C. The spectra were recorded in three overlapping sections and cover the wavenumber range 1800&amp;ndash;3932 cm&lt;sup&gt;-1&lt;/sup&gt;. This spectrum is analyzed together with a previously reported one spanning the 380&amp;ndash;2190 cm&lt;sup&gt;-1&lt;/sup&gt; range [Parekunnel et al., J. Mol. Spectrosc. 101 (2001) 28]. This analysis leads to 4409 newly assigned HDO emission lines. This workparticularly extends data on the (200) and (120) states of HDO for which newly determined energy levels are presented.&lt;/p&gt;</Comments>
+		<Comments> Measurements of line positions and absolute linestrengths of HDO in the   2  band were made with a Fourier-transform spectrometer at a resolution of 5 10 -3  cm -1 . The measured line previous term frequencies next term of HD 16 O and HD 18 O were used along with additional data taken from studies of pure rotational previous termtransitionsnext term in an analysis to obtain rotational energies of levels in the (000) and (010) states. Measurements of the linestrengths were fitted by least-squares and the results are in excellent agreement with the 1113 and 651 experimental previous termtransitionsnext term of HD 16 O and HD 18 O, respectively, included in the analyses. These results provide a more accurate representation of the line positions and linestrengths for the (010)-(000) band than that which is currently available on the HITRAN absorption line parameter compilation. Over 370 HD 17 O previous termtransition frequenciesnext term were measured and analyzed to obtain rotational energies of levels in the (000) and (010) states. </Comments>
 	</Source>
 	<Source sourceID="Bwadis-1079">
 		<Authors>
@@ -134,7 +67,7 @@
 				<Name>G. Guelachvili</Name>
 			</Author>
 		</Authors>
-		<Title>The v&lt;sub&gt;2&lt;/sub&gt; band of HD&lt;sup&gt;16&lt;/sup&gt;O</Title>
+		<Title>The v 2  band of HD 16 O</Title>
 		<Category>journal</Category>
 		<Year>1986</Year>
 		<SourceName>International Journal of Infrared and Millimeter Waves</SourceName>
@@ -283,38 +216,6 @@
 			<EnergyWavelength>
 				<Wavenumber methodRef="Mwadis-Exp">
 					<Value units="1/cm">1250.8469</Value>
-				</Wavenumber>
-			</EnergyWavelength>
-			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
-			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
-			<Probability/>
-				<ProcessClass/>
-			<Verification>
-				<nltcsRuleT01>true</nltcsRuleT01>
-				<nltcsRuleT02>true</nltcsRuleT02>
-			</Verification>
-		</RadiativeTransition>
-		<RadiativeTransition id="Pwadis-R561107">
-			<SourceRef>Bwadis-1032</SourceRef>
-			<EnergyWavelength>
-				<Wavenumber methodRef="Mwadis-Exp">
-					<Value units="1/cm">1250.84691</Value>
-				</Wavenumber>
-			</EnergyWavelength>
-			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
-			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
-			<Probability/>
-				<ProcessClass/>
-			<Verification>
-				<nltcsRuleT01>true</nltcsRuleT01>
-				<nltcsRuleT02>true</nltcsRuleT02>
-			</Verification>
-		</RadiativeTransition>
-		<RadiativeTransition id="Pwadis-R567184">
-			<SourceRef>Bwadis-1066</SourceRef>
-			<EnergyWavelength>
-				<Wavenumber methodRef="Mwadis-Exp">
-					<Value units="1/cm">1250.84691</Value>
 				</Wavenumber>
 			</EnergyWavelength>
 			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>

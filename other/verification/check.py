@@ -9,7 +9,7 @@ VERIFICATION_FILE_PATH = VERIFICATION_PATH + "/verification.xsd"
 if __name__ == '__main__':
 	VERIFICATION_SCHEMA_LOCATION = VERIFICATION_FILE_PATH
 else:
-	VERIFICATION_SCHEMA_LOCATION = "https://raw.github.com/VAMDC/NodeSoftware/master/other/verification/verification.xsd"
+	VERIFICATION_SCHEMA_LOCATION = "https://raw.github.com/aip/NodeSoftware/master/other/verification/verification.xsd"
 
 from lxml import etree
 import cStringIO

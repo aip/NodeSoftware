@@ -63,7 +63,40 @@
 					<Name>A.G. Maki</Name>
 				</Author>
 				<Author>
-					<Name>etc</Name>
+					<Name>J.-Y. Mandin</Name>
+				</Author>
+				<Author>
+					<Name>S.T. Massie</Name>
+				</Author>
+				<Author>
+					<Name>J. Orphal</Name>
+				</Author>
+				<Author>
+					<Name>A. Perrin</Name>
+				</Author>
+				<Author>
+					<Name>C.P. Rinsland</Name>
+				</Author>
+				<Author>
+					<Name>M.A.H. Smith</Name>
+				</Author>
+				<Author>
+					<Name>J. Tennyson</Name>
+				</Author>
+				<Author>
+					<Name>R.N. Tolchenov</Name>
+				</Author>
+				<Author>
+					<Name>R.A. Toth</Name>
+				</Author>
+				<Author>
+					<Name>J. Vander Auwera</Name>
+				</Author>
+				<Author>
+					<Name>P. Varanasi</Name>
+				</Author>
+				<Author>
+					<Name>G. Wagner</Name>
 				</Author>
 			</Authors>
 			<Title>The HITRAN 2004 Molecular Spectroscopic Database</Title>
@@ -75,7 +108,7 @@
 			<PageEnd>204</PageEnd>
 			<ArticleNumber>2</ArticleNumber>
 			<DigitalObjectIdentifier>10.1016/j.jqsrt.2004.10.008</DigitalObjectIdentifier>
-			<Comments>This paper describes the status of the 2004 edition of the HITRAN molecular spectroscopic database. The HITRAN compilation consists of several components that serve as input for radiative transfer calculation codes: individual line parameters for the microwave through visible spectra of molecules in the gas phase; absorption cross-sections for molecules having dense spectral features, i.e., spectra in which the individual lines are unresolvable; individual line parameters and absorption cross-sections for bands in the ultra-violet; refractive indices of aerosols; tables and files of general properties associated with the database; and database management software. The line-by-line portion of the database contains spectroscopic parameters for 39 molecules including many of their isotopologues. The format of the section of the database on individual line parameters of HITRAN has undergone the most extensive enhancement in almost two decades. It now lists the Einstein A-coefficients, statistical weights of the upper and lower levels of the transitions, a better system for the representation of quantum identifications, and enhanced referencing and uncertainty codes. In addition, there is a provision for making corrections to the broadening of line transitions due to line mixing.</Comments>
+			<Comments> This paper describes the status of the 2004 edition of the HITRAN molecular spectroscopic database. The HITRAN compilation consists of several components that serve as input for radiative transfer calculation codes: individual line parameters for the microwave through visible spectra of molecules in the gas phase; absorption cross-sections for molecules having dense spectral features, i.e., spectra in which the individual lines are unresolvable; individual line parameters and absorption cross-sections for bands in the ultra-violet; refractive indices of aerosols; tables and files of general properties associated with the database; and database management software. The line-by-line portion of the database contains spectroscopic parameters for 39 molecules including many of their isotopologues. The format of the section of the database on individual line parameters of HITRAN has undergone the most extensive enhancement in almost two decades. It now lists the Einstein A-coefficients, statistical weights of the upper and lower levels of the transitions, a better system for the representation of quantum identifications, and enhanced referencing and uncertainty codes. In addition, there is a provision for making corrections to the broadening of line transitions due to line mixing. </Comments>
 		</Source>
 	</Sources>
 	<Methods>

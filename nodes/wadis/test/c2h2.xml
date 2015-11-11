@@ -1,42 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<XSAMSData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 http://vamdc.org/xml/xsams/1.0" xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cml="http://www.xml-cml.org/schema">
+<XSAMSData xmlns="http://vamdc.org/xml/xsams/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xmlns:cml="http://www.xml-cml.org/schema"
+		   xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 http://vamdc.org/xml/xsams/1.0">
 <!--
    ATTENTION: The amount of data returned may have been truncated by the node.
    The data below represent 100 percent of all available data at this node that
    matched the query.
 -->
 	<Sources>
-		<Source sourceID="Bwadis-1606">
+		<Source sourceID="Bwadis-931">
 			<Authors>
 				<Author>
 					<Name>L.S. Rothman</Name>
 				</Author>
 				<Author>
-					<Name>I.E. Gordon</Name>
+					<Name>D. Jacquemart</Name>
 				</Author>
 				<Author>
 					<Name>A. Barbe</Name>
 				</Author>
 				<Author>
-					<Name>D.Chris Benner</Name>
-				</Author>
-				<Author>
-					<Name>P.F. Bernath</Name>
+					<Name>D.C. Benner</Name>
 				</Author>
 				<Author>
 					<Name>M. Birk</Name>
 				</Author>
 				<Author>
-					<Name>V. Boudon</Name>
-				</Author>
-				<Author>
 					<Name>L.R. Brown</Name>
 				</Author>
 				<Author>
-					<Name>A. Campargue</Name>
+					<Name>M. Carleer</Name>
 				</Author>
 				<Author>
-					<Name>J.-P. Champion</Name>
+					<Name>C.Chackerian Jr</Name>
 				</Author>
 				<Author>
 					<Name>K. Chance</Name>
@@ -51,33 +46,70 @@
 					<Name>V.M. Devi</Name>
 				</Author>
 				<Author>
-					<Name>S. Fally</Name>
-				</Author>
-				<Author>
 					<Name>J.-M. Flaud</Name>
 				</Author>
 				<Author>
 					<Name>R.R. Gamache</Name>
 				</Author>
 				<Author>
-					<Name>A. Goldman</Name>
+					<Name>A.Goldman</Name>
 				</Author>
 				<Author>
-					<Name>et al.</Name>
+					<Name>J.-M. Hartmann</Name>
+				</Author>
+				<Author>
+					<Name>K.W. Jucks</Name>
+				</Author>
+				<Author>
+					<Name>A.G. Maki</Name>
+				</Author>
+				<Author>
+					<Name>J.-Y. Mandin</Name>
+				</Author>
+				<Author>
+					<Name>S.T. Massie</Name>
+				</Author>
+				<Author>
+					<Name>J. Orphal</Name>
+				</Author>
+				<Author>
+					<Name>A. Perrin</Name>
+				</Author>
+				<Author>
+					<Name>C.P. Rinsland</Name>
+				</Author>
+				<Author>
+					<Name>M.A.H. Smith</Name>
+				</Author>
+				<Author>
+					<Name>J. Tennyson</Name>
+				</Author>
+				<Author>
+					<Name>R.N. Tolchenov</Name>
+				</Author>
+				<Author>
+					<Name>R.A. Toth</Name>
+				</Author>
+				<Author>
+					<Name>J. Vander Auwera</Name>
+				</Author>
+				<Author>
+					<Name>P. Varanasi</Name>
+				</Author>
+				<Author>
+					<Name>G. Wagner</Name>
 				</Author>
 			</Authors>
-			<Title>The HITRAN 2008 molecular spectroscopic database</Title>
+			<Title>The HITRAN 2004 Molecular Spectroscopic Database</Title>
 			<Category>journal</Category>
-			<Year>2009</Year>
+			<Year>2005</Year>
 			<SourceName>Journal of Quantitative Spectroscopy and Radiation Transfer</SourceName>
-			<Volume>110</Volume>
-			<PageBegin>533</PageBegin>
-			<PageEnd>572</PageEnd>
-			<ArticleNumber>9</ArticleNumber>
-			<DigitalObjectIdentifier>10.1016/j.jqsrt.2009.02.013</DigitalObjectIdentifier>
-			<Comments>&lt;p&gt;L.S. Rothman, I.E. Gordon, A. Barbe, D.Chris Benner, P.F. Bernath, M. Birk, V. Boudon, L.R. Brown, A. Campargue, J.-P. Champion, K. Chance, L.H. Coudert, V. Dana, V.M. Devi, S. Fally, J.-M. Flaud, R.R. Gamache, A. Goldman, D. Jacquemart, I. Kleiner, N. Lacome, W.J. Lafferty, J.-Y. Mandin, S.T. Massie, S.N. Mikhailenko, C.E. Miller, N. Moazzen-Ahmadi, O.V. Naumenko, A.V. Nikitin, J. Orphal, V.I. Perevalov, A. Perrin, A. Predoi-Cross, C.P. Rinsland, M. Rotger, M. Simeckova, M.A.H. Smith, K. Sung,&amp;nbsp; S.A. Tashkun, J. Tennyson, R.A. Toth, A.C. Vandaele, J. Vander Auwera&lt;br /&gt;
-&lt;br /&gt;
-This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i&gt; molecular spectroscopic database. The new edition is the first official public release since the 2004 edition, although a number of crucial updates had been made available online since 2004. The &lt;i&gt;HITRAN&lt;/i&gt; compilation consists of several components that serve as input for radiative-transfer calculation codes: individual line parameters for the microwave through visible spectra of molecules in the gas phase; absorption cross-sections for molecules having dense spectral features, i.e. spectra in which the individual lines are not resolved; individual line parameters and absorption cross-sections for bands in the ultraviolet; refractive indices of aerosols, tables and files of general properties associated with the database; and database management software. The line-by-line portion of the database contains spectroscopic parameters for 42 molecules including many of their isotopologues.&lt;/p&gt;</Comments>
+			<Volume>96</Volume>
+			<PageBegin>139</PageBegin>
+			<PageEnd>204</PageEnd>
+			<ArticleNumber>2</ArticleNumber>
+			<DigitalObjectIdentifier>10.1016/j.jqsrt.2004.10.008</DigitalObjectIdentifier>
+			<Comments> This paper describes the status of the 2004 edition of the HITRAN molecular spectroscopic database. The HITRAN compilation consists of several components that serve as input for radiative transfer calculation codes: individual line parameters for the microwave through visible spectra of molecules in the gas phase; absorption cross-sections for molecules having dense spectral features, i.e., spectra in which the individual lines are unresolvable; individual line parameters and absorption cross-sections for bands in the ultra-violet; refractive indices of aerosols; tables and files of general properties associated with the database; and database management software. The line-by-line portion of the database contains spectroscopic parameters for 39 molecules including many of their isotopologues. The format of the section of the database on individual line parameters of HITRAN has undergone the most extensive enhancement in almost two decades. It now lists the Einstein A-coefficients, statistical weights of the upper and lower levels of the transitions, a better system for the representation of quantum identifications, and enhanced referencing and uncertainty codes. In addition, there is a provision for making corrections to the broadening of line transitions due to line mixing. </Comments>
 		</Source>
 	</Sources>
 	<Methods>
@@ -114,7 +146,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-110-0.0.0.1.0.1.X.48.g.X.f-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="lpcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
+					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs" xsi:type="case:Case" caseID="lpcs">
 						<case:QNs>
 							<case:vi mode="1">0</case:vi>
 							<case:vi mode="2">0</case:vi>
@@ -130,7 +162,7 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 				</MolecularState>
 				<MolecularState stateID="Swadis-110-0.0.0.1.1.0.X.47.u.0.f-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
-					<Case xsi:type="case:Case" caseID="lpcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs">
+					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs" xsi:type="case:Case" caseID="lpcs">
 						<case:QNs>
 							<case:vi mode="1">0</case:vi>
 							<case:vi mode="2">0</case:vi>
@@ -150,8 +182,8 @@ This paper describes the status of the 2008 edition of the &lt;i&gt;HITRAN&lt;/i
 	</Species>
 	<Processes>
 		<Radiative>
-			<RadiativeTransition id="Pwadis-R298">
-				<SourceRef>Bwadis-1606</SourceRef>
+			<RadiativeTransition id="Pwadis-R13325">
+				<SourceRef>Bwadis-931</SourceRef>
 				<EnergyWavelength>
 					<Wavenumber methodRef="Mwadis-Exp">
 						<Value units="1/cm">615.00763</Value>

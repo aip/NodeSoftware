@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VerificationData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 https://raw.github.com/VAMDC/NodeSoftware/master/other/verification/verification.xsd" xmlns:cml="http://www.xml-cml.org/schema"
+<VerificationData xsi:schemaLocation="http://vamdc.org/xml/xsams/1.0 https://raw.github.com/aip/NodeSoftware/master/other/verification/verification.xsd" xmlns:cml="http://www.xml-cml.org/schema"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://vamdc.org/xml/xsams/1.0">
 <VerificationResult>
 	<NumberOfMolecularStates correct="2" incorrect="1" total="3" unidentified="0"/>
-	<NumberOfRadiativeTransitions correct="5" incorrect="1" total="6" unidentified="0"/>
+	<NumberOfRadiativeTransitions correct="3" incorrect="1" total="4" unidentified="0"/>
 	<NumberOfVerificationByRule name="nltcsRuleS01" correct="2" incorrect="1" unidentified="0"/>
-	<NumberOfVerificationByRule name="nltcsRuleT01" correct="6" incorrect="0" unidentified="0"/>
-	<NumberOfVerificationByRule name="nltcsRuleT02" correct="5" incorrect="1" unidentified="0"/>
+	<NumberOfVerificationByRule name="nltcsRuleT01" correct="4" incorrect="0" unidentified="0"/>
+	<NumberOfVerificationByRule name="nltcsRuleT02" correct="3" incorrect="1" unidentified="0"/>
 </VerificationResult>
 <XSAMSData><!--
    ATTENTION: The amount of data returned may have been truncated by the node.
@@ -26,7 +26,7 @@
 				<Name>V.M. Devi D.C. Benner</Name>
 			</Author>
 		</Authors>
-		<Title>Measurements of Lorentz-Broadening Coefficients and Pressure-Induced Line Shift Coefficients in the v&lt;sub&gt;2&lt;/sub&gt; Band of HD&lt;sup&gt;16&lt;/sup&gt;0</Title>
+		<Title>Measurements of Lorentz-Broadening Coefficients and Pressure-Induced Line Shift Coefficients in the v 2  Band of HD 16 0</Title>
 		<Category>journal</Category>
 		<Year>1991</Year>
 		<SourceName>Journal of Molecular Spectroscopy</SourceName>
