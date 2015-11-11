@@ -3,8 +3,10 @@ import sys
 import os
 
 
+XSAMS_FILENAME = 'xsams.xsd'
 VERIFICATION_PATH = os.path.dirname(os.path.abspath(__file__))
-VERIFICATION_FILE_PATH = VERIFICATION_PATH + "/verification.xsd"
+VERIFICATION_FILENAME = 'verification.local.xsd'
+VERIFICATION_FILE_PATH = os.path.join(VERIFICATION_PATH, VERIFICATION_FILENAME)
 
 if __name__ == '__main__':
 	VERIFICATION_SCHEMA_LOCATION = VERIFICATION_FILE_PATH

@@ -2,10 +2,11 @@ import re
 from lxml import objectify, etree
 import unittest
 import sys
+import os
 
 sys.path.insert(0, '.')
 import check
-check.VERIFICATION_SCHEMA_LOCATION = u'../verification.xsd'
+check.VERIFICATION_SCHEMA_LOCATION = os.path.join('..', check.VERIFICATION_FILENAME)
 from check import Verification, RulesParser, Rule
 from check import XSAMS_NS
 from check import printRules
