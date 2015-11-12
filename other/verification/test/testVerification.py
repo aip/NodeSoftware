@@ -6,20 +6,13 @@ import os
 
 sys.path.insert(0, '.')
 import check
+from check import Verification, RulesParser, Rule, printRules
+from test import getXSD
+
+
 check.VERIFICATION_SCHEMA_LOCATION = os.path.join('..', check.VERIFICATION_FILENAME)
-from check import Verification, RulesParser, Rule
-from check import XSAMS_NS
-from check import printRules
 
-from test import LocalResolver
-
-
-parser = etree.XMLParser()
-parser.resolvers.add(LocalResolver({"http://vamdc.org/xml/xsams/1.0/": check.VERIFICATION_PATH + "/xsd/xsams/1.0/xsams.xsd"}))
-etreeObj = etree.parse(check.VERIFICATION_FILE_PATH, parser = parser)
-#xsd = etree.XMLSchema(etreeObj)
-xsd = etree.XMLSchema(file=check.VERIFICATION_FILE_PATH)
-
+xsd = getXSD(check.VERIFICATION_FILE_ABS_PATH)
 
 class VerificationTestCase(unittest.TestCase):
 	def setUp(self):
@@ -32,7 +25,7 @@ class VerificationTestCase(unittest.TestCase):
 		ver = Verification("test/moleculeH2O.IN.xml", rulesParser.getRules())
 		tree = ver.run()
 		xsd.assertValid(tree)
-		numberElements = tree.xpath('//xsams:NumberOfVerificationByRule[@name = "aRuleS01"]', namespaces={"xsams":XSAMS_NS})
+		numberElements = tree.xpath('//xsams:NumberOfVerificationByRule[@name = "aRuleS01"]', namespaces={"xsams":check.XSAMS_NS})
 		self.assertEquals(1, len(numberElements))
 		for numberElement in numberElements:
 			self.assertEquals("6", numberElement.attrib["correct"])
@@ -45,7 +38,7 @@ class VerificationTestCase(unittest.TestCase):
 		ver = Verification("test/moleculeH2O.IN.xml", rulesParser.getRules())
 		tree = ver.run()
 		xsd.assertValid(tree)
-		numberElements = tree.xpath('//xsams:NumberOfVerificationByRule', namespaces={"xsams":XSAMS_NS})
+		numberElements = tree.xpath('//xsams:NumberOfVerificationByRule', namespaces={"xsams":check.XSAMS_NS})
 		self.assertEquals(2, len(numberElements))
 
 
@@ -55,7 +48,7 @@ class VerificationTestCase(unittest.TestCase):
 		ver = Verification("test/moleculeH2O.IN.xml", rulesParser.getRules())
 		tree = ver.run()
 		xsd.assertValid(tree)
-		numberElements = tree.xpath('//xsams:NumberOfVerificationByRule', namespaces={"xsams":XSAMS_NS})
+		numberElements = tree.xpath('//xsams:NumberOfVerificationByRule', namespaces={"xsams":check.XSAMS_NS})
 		self.assertEquals(3, len(numberElements))
 
 

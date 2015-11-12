@@ -34,20 +34,14 @@ except ImportError:
 from django.test.client import Client
 from vamdctap import views
 
+
 from other.verification.check import XSAMS_NS, RulesParser, Rule, \
-	VERIFICATION_PATH, VERIFICATION_FILE_PATH, XSAMS_FILENAME
-from other.verification.test import LocalResolver
-parser = etree.XMLParser()
-xsdPath = os.path.join(VERIFICATION_PATH, 'xsd', 'xsams', '1.0', XSAMS_FILENAME)
-parser.resolvers.add(LocalResolver({"http://vamdc.org/xml/xsams/1.0/" : xsdPath}))
-xsamsXSD=etree.XMLSchema(etree.parse(xsdPath, parser=parser))
-#The libxml2 has a bug 170795 (reported: 2005). XML Schemas doesn't validate IDREF/IDREFS attributes.
-#etree.XMLSchema has problem with the 'etree' parameter if xml-schema file has repeated inclusions
-verificationXSD = etree.XMLSchema(file=VERIFICATION_FILE_PATH)
+	XSAMS_FILE_ABS_PATH, VERIFICATION_FILE_ABS_PATH
+from other.verification.test import getXSD
 
 
-
-
+xsamsXSD=getXSD(XSAMS_FILE_ABS_PATH)
+verificationXSD = getXSD(VERIFICATION_FILE_ABS_PATH)
 testClient = Client()
 
 

@@ -53,6 +53,14 @@ class LocalResolver(etree.Resolver):
 
 		return self.resolve_filename(url, context)
 
+def getXSD(filename):
+	with open(filename, "r") as xsdFile:
+		xsdStr=xsdFile.read().replace(check.XSAMS_NS + '/', check.XSAMS_PATH + '/')
+
+	#The libxml2 has a bug 170795 (reported: 2005). XML Schemas doesn't validate IDREF/IDREFS attributes.
+	#etree.XMLSchema has problem with the 'etree' parameter if xml-schema file has repeated inclusions
+	return etree.XMLSchema(etree.fromstring(text = xsdStr, base_url=filename))
+
 
 def makeTestFileFromBigFile(fileName, count=0):
 	tree = etree.parse(open("test/" + fileName + ".xml"))
@@ -62,7 +70,7 @@ def makeTestFileFromBigFile(fileName, count=0):
 
 	root = tree.getroot()
 	locations = root.get('{%s}schemaLocation' % check.XSI_NS).split(' ')
-	locations[1] = '../xsd/xsams/1.0/xsams.xsd'
+	locations[1] = os.path.join('..', check.XSAMS_FILE_PATH)
 	root.set('{%s}schemaLocation' % check.XSI_NS, locations[0] + ' ' + locations[1])
 
 	nodes = XPathEval('//*[child::xsams:RadiativeTransition]')

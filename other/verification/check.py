@@ -3,13 +3,18 @@ import sys
 import os
 
 
+VERIFICATION_ABS_PATH = os.path.dirname(os.path.abspath(__file__))
+VERIFICATION_FILENAME = 'verification.xsd'
+VERIFICATION_FILE_ABS_PATH = os.path.join(VERIFICATION_ABS_PATH, VERIFICATION_FILENAME)
+XSAMS_PATH = os.path.join('xsd', 'xsams', '1.0')
+XSAMS_ABS_PATH = os.path.join(VERIFICATION_ABS_PATH, XSAMS_PATH)
 XSAMS_FILENAME = 'xsams.xsd'
-VERIFICATION_PATH = os.path.dirname(os.path.abspath(__file__))
-VERIFICATION_FILENAME = 'verification.local.xsd'
-VERIFICATION_FILE_PATH = os.path.join(VERIFICATION_PATH, VERIFICATION_FILENAME)
+XSAMS_FILE_PATH = os.path.join(XSAMS_PATH, XSAMS_FILENAME)
+XSAMS_FILE_ABS_PATH = os.path.join(XSAMS_ABS_PATH, XSAMS_FILENAME)
+
 
 if __name__ == '__main__':
-	VERIFICATION_SCHEMA_LOCATION = VERIFICATION_FILE_PATH
+	VERIFICATION_SCHEMA_LOCATION = VERIFICATION_FILE_ABS_PATH
 else:
 	VERIFICATION_SCHEMA_LOCATION = "https://raw.github.com/aip/NodeSoftware/master/other/verification/verification.xsd"
 
@@ -663,7 +668,7 @@ class RulesParser:
 
 	def getRules(self):
 		if not self.rules:
-			tree = XSDTree.makeOne(VERIFICATION_FILE_PATH)
+			tree = XSDTree.makeOne(VERIFICATION_FILE_ABS_PATH)
 
 			if not tree:
 				return self.rules
