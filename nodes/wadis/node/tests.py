@@ -367,7 +367,7 @@ class TapSyncTest(TestCase):
 
 		content = views.sync(self.request).content
 		objTree = objectify.fromstring(content)
-		#print_all_queries()
+		# print_all_queries()
 		removeSelfSource(objTree)
 		actual = etree.tostring(objTree, pretty_print=True)
 		xsamsXSD.assertValid(objTree)

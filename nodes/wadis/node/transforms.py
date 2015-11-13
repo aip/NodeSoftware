@@ -2,15 +2,16 @@ from wadis.node.model import saga
 from wadis.node.model.data import categoryTypeDict
 from django.db.models import Q
 
-defaultList = {'id_substance':('exact','1000021')}
-def makeQ(q, tuple):
+substance_id_field = 'id_substance'
+
+
+def makeQ(q, tuple, default_substances = []):
 	defaultFlag = formatQ(q, tuple, True)
-	q &= Q(**{'id_%s_ds__status__exact' % tuple[0]:'public'})
-	q &= Q(**{'id_%s_ds__type__exact' % tuple[0]:'1'})
-	if defaultFlag:
-		for field in defaultList:
-			q &= Q(**{field + '__' + defaultList[field][0]: defaultList[field][1]})
+	q &= Q(**{'id_%s_ds__status__exact' % tuple[0]: 'public'})
+	q &= Q(**{'id_%s_ds__type__exact' % tuple[0]: '1'})
 	q &= Q(**{'id_%s_ds__composition__exact' % tuple[0]: 'Primary'})
+	if defaultFlag and default_substances:
+		q &= Q(**{substance_id_field + '__in': default_substances})
 	return q
 
 def formatQ(q, tuple, defaultFlag):
@@ -18,7 +19,8 @@ def formatQ(q, tuple, defaultFlag):
 		if type(c) == Q:
 			defaultFlag = formatQ(c, tuple, defaultFlag)
 		else:
-			if (type(c[0]) == str and c[0][:c[0].rfind('__')] in defaultList) or (type(c[1]) == str and c[1][:c[1].rfind('__')] in defaultList):
+			if (type(c[0]) == str and c[0][:c[0].rfind('__')] == substance_id_field) \
+					or (type(c[1]) == str and c[1][:c[1].rfind('__')] == substance_id_field):
 				defaultFlag = False
 			var1 = c[0] % tuple if type(c[0]) == str and c[0].count('%') == len(tuple) else c[0]
 			var2 = c[1] % tuple if type(c[1]) == str and c[1].count('%') == len(tuple) else c[1]

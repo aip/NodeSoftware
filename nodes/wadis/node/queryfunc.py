@@ -30,6 +30,17 @@ def LOG(s):
 	if settings.DEBUG: print >> sys.stderr, "\n%s" % s
 
 
+def set_default_substances():
+	default_substances = []
+	if settings.DEFAULT_SUBSTANCES:
+		for substance in settings.DEFAULT_SUBSTANCES:
+			default_substances.extend(
+				Substancecorr.objects.filter(id_subst_main=substance).
+				values_list('id_substance', flat=True))
+		settings.DEFAULT_SUBSTANCES.extend(default_substances)
+	else:
+		settings.DEFAULT_SUBSTANCES = default_substances
+	return settings.DEFAULT_SUBSTANCES
 #------------------------------------------------------------
 # Helper functions (called from setupResults)
 #------------------------------------------------------------
@@ -154,7 +165,8 @@ def getRows(database, table, q):
 		table = 'transition' if table == 'lineprof' else table
 		dsID = 'id_%s_ds' % table
 		exQ = Q(**{dsID + '__in': tableDigestObj.objects.filter(line_count__gt=settings.LIMIT).values_list(dsID, flat=True)})
-		return tableObj.objects.select_related().exclude(exQ).filter(makeQ(q, (table,)))
+
+		return tableObj.objects.select_related().exclude(exQ).filter(makeQ(q, (table,), settings.DEFAULT_SUBSTANCES))
 	else:
 		return EmptyQuerySet()
 
@@ -285,3 +297,7 @@ def setupResults(tap):
 rules = None #See tests.py
 def returnResults(tap):
 	return other.verification.http.getResult(tap, rules)
+
+set_default_substances()
+
+
