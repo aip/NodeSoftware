@@ -1,6 +1,8 @@
-from django.db import models
-import fake
 import sys
+
+from django.db import models
+
+from wadis.node.model import fake
 
 
 class DataSource(models.Model):

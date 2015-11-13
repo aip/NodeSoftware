@@ -52,7 +52,7 @@ idCount = 0
 def makeStateId(id_substance, qns):
 	global idCount
 	idCount += 1
-	return str(id_substance - 1000000) + '-' + '.'.join(filter(bool, map(toStr, qns))) + '-' + str(idCount)
+	return 'M' + str(id_substance - 1000000) + '-' + '.'.join(filter(bool, map(toStr, qns))) + '-' + str(idCount)
 
 
 

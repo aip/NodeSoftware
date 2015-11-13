@@ -6,22 +6,23 @@ from lxml import objectify, etree
 from django.db import connections
 
 from django.conf import settings
-#Warning! Forced DEBUG = FALSE in DjangoTestSuiteRunner->setup_test_environment->settings.DEBUG = False
-from models import *
-import wadis.node.model.fake as fake
-from wadis.node import transforms
-#import nodes.wadis vs. wadis - no cache. See print sys.modules
-import wadis.node.queryfunc as queryfunc
-import wadis.util.test as test
 
-INCHI = import_module(settings.UTILPKG + ".inchi")
-DICTS = import_module(settings.NODEPKG + '.dictionaries')
-if 'NodeID' in DICTS.RETURNABLES:
-	NODEID = DICTS.RETURNABLES['NodeID']
+from wadis.node.models import *
+from wadis.node.model import fake
+import wadis.node.transforms
+import wadis.node.queryfunc
+
+
+test = import_module(settings.UTILPKG + ".test")
+inchi = import_module(settings.UTILPKG + ".inchi")
+dicts = import_module(settings.NODEPKG + '.dictionaries')
+if 'NodeID' in dicts.RETURNABLES:
+	NODEID = dicts.RETURNABLES['NodeID']
 else:
 	NODEID = 'fake'
 
-DEBUG = False
+#Warning! Forced DEBUG = FALSE in DjangoTestSuiteRunner->setup_test_environment->settings.DEBUG = False
+DEBUG = True
 try:
 	from django.utils.unittest import TestCase
 except ImportError:
@@ -86,7 +87,7 @@ def getBigFile():
 #getBigFile()
 
 
-
+'''
 class VerificationTest(TestCase):
 	prefixURL = "/tap/sync?"
 	# test data sources is only less than 1500 transitions
@@ -197,7 +198,7 @@ class VerificationTest(TestCase):
 	def tearDown(self):
 		queryfunc.rules = None
 		pass
-
+'''
 
 
 class TapSyncTest(TestCase):
@@ -216,7 +217,7 @@ class TapSyncTest(TestCase):
 
 		self.queryDict = toDict(QueryDict(self.query))
 
-
+	'''
 	def testGetSources(self):
 		settings.DEBUG = DEBUG
 
@@ -356,7 +357,7 @@ class TapSyncTest(TestCase):
 
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/co.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
-
+	'''
 
 	def testSyncSelectMoleculeEnergy(self):
 		settings.DEBUG = DEBUG
@@ -366,14 +367,16 @@ class TapSyncTest(TestCase):
 
 		content = views.sync(self.request).content
 		objTree = objectify.fromstring(content)
+		print_all_queries()
 		removeSelfSource(objTree)
 		actual = etree.tostring(objTree, pretty_print=True)
+		print(actual)
 		xsamsXSD.assertValid(objTree)
 
 		expected = etree.tostring(objectify.fromstring(open(settings.BASE_PATH + "/nodes/" + settings.NODENAME + "/test/Energy.xml").read()), pretty_print=True)
 		self.assertEquals(expected, actual)
 
-
+	'''
 	def testSyncSelectMoleculeH_17OD_W_EC(self):
 		settings.DEBUG = DEBUG
 		sql = "SELECT All WHERE ((Inchi='InChI=1S/H2O/h1H2/i1+1/hD'  AND RadTransWavenumber > 1234.23 AND RadTransWavenumber < 1244.24) AND MethodCategory = 'experiment')"
@@ -432,12 +435,12 @@ class TapSyncTest(TestCase):
 		objTree = objectify.fromstring(testClient.get(self.prefixURL + self.query + sql.strip()).content)
 		xsamsXSD.assertValid(objTree)
 
-
+	'''
 	def tearDown(self):
 		pass
 
 
-
+'''
 class TransformsTestCase(TestCase):
 	def setUp(self):
 		pass
@@ -494,12 +497,12 @@ class InchiTestCase(TestCase):
 
 
 	def testInchiToInciKey(self):
-		self.assertEquals("XLYOFNOQVPJJNP-UHFFFAOYSA-N", INCHI.inchiToInchiKey("InChI=1S/H2O/h1H2"))
+		self.assertEquals("XLYOFNOQVPJJNP-UHFFFAOYSA-N", inchi.inchiToInchiKey("InChI=1S/H2O/h1H2"))
 
 
 	def tearDown(self):
 		pass
-
+'''
 
 
 def suite():

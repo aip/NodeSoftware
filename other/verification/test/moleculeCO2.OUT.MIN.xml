@@ -60,7 +60,6 @@
 								<ltcs:l2>0</ltcs:l2>
 								<ltcs:v3>0</ltcs:v3>
 								<ltcs:J>0</ltcs:J>
-								<ltcs:r name="Fermi resonance rank">0</ltcs:r>
 								<ltcs:kronigParity>e</ltcs:kronigParity>
 							</ltcs:QNs>
 						</Case>

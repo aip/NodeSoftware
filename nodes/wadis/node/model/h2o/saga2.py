@@ -1,5 +1,6 @@
 from wadis.node.model.data import *
 
+
 prefix = 'nltcs'
 
 
@@ -15,10 +16,13 @@ class Energy(EnergyData):
 	ident_nm_flags = models.IntegerField()
 
 
-	def qns(self):
-		qns = [None] * 6
-		if self.ident_nm is not None:
-			qns = self.ident_nm.split()
+	def qns(self, use_default=False):
+		if use_default:
+			qns = [0] * 6
+		else:
+			qns = [None] * 6
+			if self.ident_nm is not None:
+				qns = self.ident_nm.split()
 		return (("v1", qns[0]), ("v2", qns[1]), ("v3", qns[2]), ("J", qns[3]), ("Ka", qns[4]), ("Kc", qns[5]))
 
 

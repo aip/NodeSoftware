@@ -1,5 +1,6 @@
 from wadis.node.model.data import *
 
+
 prefix = 'lpcs'
 
 
@@ -16,10 +17,17 @@ class Energy(EnergyData):
 	calc_flags = models.IntegerField()
 
 
-	def qns(self):
-		qns = [None] * 11
-		if self.ident_nm is not None:
-			qns = self.ident_nm.split()
+	def qns(self, use_default=False):
+		if use_default:
+			qns = [0] * 11
+			qns[6] = '_'
+			qns[8] = 'g'
+			qns[9] = '_'
+			qns[10] = 'e'
+		else:
+			qns = [None] * 11
+			if self.ident is not None:
+				qns = self.ident.split()
 		return (("viMode", (1, 2, 3, 4, 5)), ("vi", (qns[0], qns[1], qns[2], qns[3], qns[4])), ("l", qns[5]), ("r", None if qns[6] == '_' else qns[6]), ("J", qns[7]), ("vibInv", qns[8]), ("parity", None if qns[9] == '_' else qns[9]), ("kronigParity", qns[10]))
 
 

@@ -17,10 +17,13 @@ class Energy(EnergyData):
 	calc_flags = models.IntegerField()
 
 
-	def qns(self):
-		qns = [None] * 2
-		if self.ident_nm is not None:
-			qns = self.ident_nm.split()
+	def qns(self, use_default=False):
+		if use_default:
+			qns = [0] * 2
+		else:
+			qns = [None] * 2
+			if self.ident is not None:
+				qns = self.ident.split()
 		return (("v", qns[0]), ("J", qns[2]))
 
 

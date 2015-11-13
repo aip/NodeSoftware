@@ -8,20 +8,23 @@
 # as its only argument. 
 #
 import sys
+import cgi
+import copy
+
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models.query import EmptyQuerySet
+from django.db.models import Q
+
+import other.verification.http
+from vamdctap.sqlparse import sql2Q
+
+from wadis.node import models
 from wadis.node.model import atmos
 from wadis.node.model.fake import State
-from wadis.node.model.saga import Substancecorr
-from wadis.node.model.saga import Substance
+from wadis.node.model.saga import Substancecorr, Substance
 from wadis.node.transforms import makeQ
-from django.db.models.query import EmptyQuerySet
-from vamdctap.sqlparse import sql2Q
-import other.verification.http
-from django.db.models import Q
-import cgi
-
-import models
+from wadis.node.dictionaries import RETURNABLES
 
 
 def LOG(s):
@@ -109,9 +112,18 @@ def getMolecules(items):
 			substance = molecules[id_substance]
 
 		if table == 'energy':
-			qns =  item.qns()
-			if not (qns in substance.States):
-				substance.States[qns] = State(id_substance, item.getCase(), item, qns)
+			if not substance.States:
+				zeroItem = copy.copy(item)
+				zeroItem.energy = 0
+				zeroItem.energy_delta = None
+				qns = item.qns(True)
+				state = State(id_substance, zeroItem.getCase(), zeroItem, qns)
+				state.id = RETURNABLES['MoleculeStateEnergyOrigin']
+				substance.States[state.id] = state
+
+			qns = item.qns()
+			state = State(id_substance, item.getCase(), item, qns)
+			substance.States[state.id] = state
 
 		elif table == 'transition' or table == 'lineprof':
 			upQNs =  item.up()

@@ -1,4 +1,4 @@
-import wadis.node.model.saga as saga
+from wadis.node.model import saga
 from wadis.node.model.fake import categoryTypeDict
 from django.db.models import Q
 

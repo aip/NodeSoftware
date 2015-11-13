@@ -144,7 +144,7 @@ moleculeReturnables = {#
 	#'MoleculeStableMolecularProperties' : '',
 	#'MoleculeStateDescription' : '',
 	'MoleculeStateEnergy' : {'Value': 'MoleculeState.energy', 'Unit': u'1/cm', 'Accuracy': 'MoleculeState.energy_delta', 'AccuracyType': u'statistical', 'Method':'MoleculeState.id_energy_ds.getMethod()'},
-	'MoleculeStateEnergyOrigin' : u'Zero',
+	'MoleculeStateEnergyOrigin' : u'EnergyZero',
 	'MoleculeStateID' : 'MoleculeState.id',
 	#'MoleculeStateLifeTime' : {},
 	#'MoleculeStateMixingCoefficient' : '',

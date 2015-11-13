@@ -88,7 +88,6 @@
 								<lpcs:l>0</lpcs:l>
 								<lpcs:vibInv>g</lpcs:vibInv>
 								<lpcs:J>0</lpcs:J>
-								<lpcs:parity>+</lpcs:parity>
 								<lpcs:kronigParity>e</lpcs:kronigParity>
 							</lpcs:QNs>
 						</Case>
