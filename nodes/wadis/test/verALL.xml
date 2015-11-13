@@ -110,7 +110,7 @@
 				</StableMolecularProperties>
 				<Comment>HOD</Comment>
 			</MolecularChemicalSpecies>
-			<MolecularState stateID="Swadis-163-0.0.0.11.1.1-3">
+			<MolecularState stateID="Swadis-M163-0.0.0.11.1.1-3">
 				<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 					<case:QNs>
@@ -126,7 +126,7 @@
 					<nltcsRuleS01>false</nltcsRuleS01>
 				</Verification>
 			</MolecularState>
-			<MolecularState stateID="Swadis-163-0.0.0.11.1.10-2">
+			<MolecularState stateID="Swadis-M163-0.0.0.11.1.10-2">
 				<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 					<case:QNs>
@@ -142,7 +142,7 @@
 					<nltcsRuleS01>true</nltcsRuleS01>
 				</Verification>
 			</MolecularState>
-			<MolecularState stateID="Swadis-163-0.1.0.10.1.9-1">
+			<MolecularState stateID="Swadis-M163-0.1.0.10.1.9-1">
 				<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 				<Case xsi:type="case:Case" caseID="nltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs">
 					<case:QNs>
@@ -170,8 +170,8 @@
 					<Value units="1/cm">1250.84642</Value>
 				</Wavenumber>
 			</EnergyWavelength>
-			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
-			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
+			<UpperStateRef>Swadis-M163-0.1.0.10.1.9-1</UpperStateRef>
+			<LowerStateRef>Swadis-M163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
 				<ProcessClass/>
 			<Verification>
@@ -186,8 +186,8 @@
 					<Value units="1/cm">1250.8466</Value>
 				</Wavenumber>
 			</EnergyWavelength>
-			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
-			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
+			<UpperStateRef>Swadis-M163-0.1.0.10.1.9-1</UpperStateRef>
+			<LowerStateRef>Swadis-M163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
 				<ProcessClass/>
 			<Verification>
@@ -202,8 +202,8 @@
 					<Value units="1/cm">1250.8466</Value>
 				</Wavenumber>
 			</EnergyWavelength>
-			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
-			<LowerStateRef>Swadis-163-0.0.0.11.1.1-3</LowerStateRef>
+			<UpperStateRef>Swadis-M163-0.1.0.10.1.9-1</UpperStateRef>
+			<LowerStateRef>Swadis-M163-0.0.0.11.1.1-3</LowerStateRef>
 			<Probability/>
 				<ProcessClass/>
 			<Verification>
@@ -218,8 +218,8 @@
 					<Value units="1/cm">1250.8469</Value>
 				</Wavenumber>
 			</EnergyWavelength>
-			<UpperStateRef>Swadis-163-0.1.0.10.1.9-1</UpperStateRef>
-			<LowerStateRef>Swadis-163-0.0.0.11.1.10-2</LowerStateRef>
+			<UpperStateRef>Swadis-M163-0.1.0.10.1.9-1</UpperStateRef>
+			<LowerStateRef>Swadis-M163-0.0.0.11.1.10-2</LowerStateRef>
 			<Probability/>
 				<ProcessClass/>
 			<Verification>

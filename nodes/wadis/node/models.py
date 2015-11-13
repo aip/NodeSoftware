@@ -1,4 +1,4 @@
-from wadis.node.model.fake import *
+from wadis.node.model.data import *
 from wadis.node.model.atmos import *
 from wadis.node.model.saga import *
 #See django/db/models/base.py in 52 (app_label = model_module.__name__.split('.')[-2]) because the table cache is made by app_label.

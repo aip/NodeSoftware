@@ -9,7 +9,6 @@
 #
 import sys
 import cgi
-import copy
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
@@ -21,7 +20,7 @@ from vamdctap.sqlparse import sql2Q
 
 from wadis.node import models
 from wadis.node.model import atmos
-from wadis.node.model.fake import State
+from wadis.node.model.data import State
 from wadis.node.model.saga import Substancecorr, Substance
 from wadis.node.transforms import makeQ
 from wadis.node.dictionaries import RETURNABLES
@@ -113,11 +112,12 @@ def getMolecules(items):
 
 		if table == 'energy':
 			if not substance.States:
-				zeroItem = copy.copy(item)
+				zeroItem = item.__class__()
 				zeroItem.energy = 0
-				zeroItem.energy_delta = None
+				zeroItem.id_energy_ds = item.id_energy_ds.__class__()
+
 				qns = item.qns(True)
-				state = State(id_substance, zeroItem.getCase(), zeroItem, qns)
+				state = State(id_substance, item.getCase(), zeroItem, qns)
 				state.id = RETURNABLES['MoleculeStateEnergyOrigin']
 				substance.States[state.id] = state
 

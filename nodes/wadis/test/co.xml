@@ -56,7 +56,7 @@
 					</StableMolecularProperties>
 					<Comment>CO</Comment>
 				</MolecularChemicalSpecies>
-				<MolecularState stateID="Swadis-36-1.4-2">
+				<MolecularState stateID="Swadis-M36-1.4-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xsi:type="case:Case" caseID="dcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/dcs">
 						<case:QNs>
@@ -65,7 +65,7 @@
 						</case:QNs>
 					</Case>
 				</MolecularState>
-				<MolecularState stateID="Swadis-36-2.5-1">
+				<MolecularState stateID="Swadis-M36-2.5-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xsi:type="case:Case" caseID="dcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/dcs">
 						<case:QNs>
@@ -86,8 +86,8 @@
 						<Value units="1/cm">2135.31363</Value>
 					</Wavenumber>
 				</EnergyWavelength>
-				<UpperStateRef>Swadis-36-2.5-1</UpperStateRef>
-				<LowerStateRef>Swadis-36-1.4-2</LowerStateRef>
+				<UpperStateRef>Swadis-M36-2.5-1</UpperStateRef>
+				<LowerStateRef>Swadis-M36-1.4-2</LowerStateRef>
 				<Probability/>
 				<ProcessClass/>
 			</RadiativeTransition>

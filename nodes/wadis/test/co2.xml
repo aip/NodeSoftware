@@ -61,7 +61,7 @@
 					</StableMolecularProperties>
 					<Comment>CO2</Comment>
 				</MolecularChemicalSpecies>
-				<MolecularState stateID="Swadis-37-0.1.1.0.1.37.e-2">
+				<MolecularState stateID="Swadis-M37-0.1.1.0.1.37.e-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xsi:type="case:Case" caseID="ltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/ltcs">
 						<case:QNs>
@@ -75,7 +75,7 @@
 						</case:QNs>
 					</Case>
 				</MolecularState>
-				<MolecularState stateID="Swadis-37-3.1.1.1.1.36.e-1">
+				<MolecularState stateID="Swadis-M37-3.1.1.1.1.36.e-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xsi:type="case:Case" caseID="ltcs" xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/ltcs">
 						<case:QNs>
@@ -102,8 +102,8 @@
 						<Accuracy type="statistical">0.0008</Accuracy>
 					</Wavenumber>
 				</EnergyWavelength>
-				<UpperStateRef>Swadis-37-3.1.1.1.1.36.e-1</UpperStateRef>
-				<LowerStateRef>Swadis-37-0.1.1.0.1.37.e-2</LowerStateRef>
+				<UpperStateRef>Swadis-M37-3.1.1.1.1.36.e-1</UpperStateRef>
+				<LowerStateRef>Swadis-M37-0.1.1.0.1.37.e-2</LowerStateRef>
 				<Probability/>
 				<ProcessClass/>
 			</RadiativeTransition>

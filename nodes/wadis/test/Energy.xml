@@ -67,7 +67,7 @@
 				</MolecularChemicalSpecies>
 				<MolecularState stateID="Swadis-EnergyZero">
 					<MolecularStateCharacterisation>
-						<StateEnergy methodRef="Mwadis-Exp" energyOrigin="Swadis-EnergyZero">
+						<StateEnergy energyOrigin="Swadis-EnergyZero">
 							<Value units="1/cm">0</Value>
 						</StateEnergy>
 					</MolecularStateCharacterisation>

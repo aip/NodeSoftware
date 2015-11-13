@@ -183,7 +183,7 @@
 					</StableMolecularProperties>
 					<Comment>H_17OD</Comment>
 				</MolecularChemicalSpecies>
-				<MolecularState stateID="Swadis-165-0.0.0.5.4.1-2">
+				<MolecularState stateID="Swadis-M165-0.0.0.5.4.1-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs" xsi:type="case:Case" caseID="nltcs">
 						<case:QNs>
@@ -196,7 +196,7 @@
 						</case:QNs>
 					</Case>
 				</MolecularState>
-				<MolecularState stateID="Swadis-165-0.0.0.5.4.2-4">
+				<MolecularState stateID="Swadis-M165-0.0.0.5.4.2-4">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs" xsi:type="case:Case" caseID="nltcs">
 						<case:QNs>
@@ -209,7 +209,7 @@
 						</case:QNs>
 					</Case>
 				</MolecularState>
-				<MolecularState stateID="Swadis-165-0.1.0.4.3.1-3">
+				<MolecularState stateID="Swadis-M165-0.1.0.4.3.1-3">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs" xsi:type="case:Case" caseID="nltcs">
 						<case:QNs>
@@ -222,7 +222,7 @@
 						</case:QNs>
 					</Case>
 				</MolecularState>
-				<MolecularState stateID="Swadis-165-0.1.0.4.3.2-1">
+				<MolecularState stateID="Swadis-M165-0.1.0.4.3.2-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/nltcs" xsi:type="case:Case" caseID="nltcs">
 						<case:QNs>
@@ -247,8 +247,8 @@
 						<Value units="1/cm">1234.23473</Value>
 					</Wavenumber>
 				</EnergyWavelength>
-				<UpperStateRef>Swadis-165-0.1.0.4.3.2-1</UpperStateRef>
-				<LowerStateRef>Swadis-165-0.0.0.5.4.1-2</LowerStateRef>
+				<UpperStateRef>Swadis-M165-0.1.0.4.3.2-1</UpperStateRef>
+				<LowerStateRef>Swadis-M165-0.0.0.5.4.1-2</LowerStateRef>
 				<Probability>
 					<IdealisedIntensity methodRef="Mwadis-Exp">
 						<Comments>cm-1/(molecule*cm-2)</Comments>
@@ -264,8 +264,8 @@
 						<Value units="1/cm">1234.44077</Value>
 					</Wavenumber>
 				</EnergyWavelength>
-				<UpperStateRef>Swadis-165-0.1.0.4.3.1-3</UpperStateRef>
-				<LowerStateRef>Swadis-165-0.0.0.5.4.2-4</LowerStateRef>
+				<UpperStateRef>Swadis-M165-0.1.0.4.3.1-3</UpperStateRef>
+				<LowerStateRef>Swadis-M165-0.0.0.5.4.2-4</LowerStateRef>
 				<Probability>
 					<IdealisedIntensity methodRef="Mwadis-Exp">
 						<Comments>cm-1/(molecule*cm-2)</Comments>

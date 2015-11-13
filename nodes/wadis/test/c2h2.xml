@@ -144,7 +144,7 @@
 					</StableMolecularProperties>
 					<Comment>C2H2</Comment>
 				</MolecularChemicalSpecies>
-				<MolecularState stateID="Swadis-110-0.0.0.1.0.1.X.48.g.X.f-2">
+				<MolecularState stateID="Swadis-M110-0.0.0.1.0.1.X.48.g.X.f-2">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs" xsi:type="case:Case" caseID="lpcs">
 						<case:QNs>
@@ -160,7 +160,7 @@
 						</case:QNs>
 					</Case>
 				</MolecularState>
-				<MolecularState stateID="Swadis-110-0.0.0.1.1.0.X.47.u.0.f-1">
+				<MolecularState stateID="Swadis-M110-0.0.0.1.1.0.X.47.u.0.f-1">
 					<MolecularStateCharacterisation>  </MolecularStateCharacterisation>
 					<Case xmlns:case="http://vamdc.org/xml/xsams/1.0/cases/lpcs" xsi:type="case:Case" caseID="lpcs">
 						<case:QNs>
@@ -189,8 +189,8 @@
 						<Value units="1/cm">615.00763</Value>
 					</Wavenumber>
 				</EnergyWavelength>
-				<UpperStateRef>Swadis-110-0.0.0.1.1.0.X.47.u.0.f-1</UpperStateRef>
-				<LowerStateRef>Swadis-110-0.0.0.1.0.1.X.48.g.X.f-2</LowerStateRef>
+				<UpperStateRef>Swadis-M110-0.0.0.1.1.0.X.47.u.0.f-1</UpperStateRef>
+				<LowerStateRef>Swadis-M110-0.0.0.1.0.1.X.48.g.X.f-2</LowerStateRef>
 				<Probability>
 					<TransitionProbabilityA methodRef="Mwadis-Exp">
 						<Value units="1/s">0.886</Value>
