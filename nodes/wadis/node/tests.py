@@ -218,6 +218,73 @@ class TapSyncTest(TestCase):
 		self.queryDict = toDict(QueryDict(self.query))
 
 
+	def testNoData(self):
+		settings.DEBUG = DEBUG
+		sql = "SELECT All WHERE RadTransWavelength > 0 AND RadTransWavelength < 0"
+		self.queryDict["QUERY"] = sql
+		self.request.REQUEST = self.queryDict
+
+		response = views.sync(self.request)
+		self.assertEquals(204, response.status_code)
+		self.assertEquals('', response.content)
+
+
+	def testNoDataForHeadRequest(self):
+		settings.DEBUG = DEBUG
+		sql = "SELECT All WHERE RadTransWavelength > 0 AND RadTransWavelength < 0"
+		self.queryDict["QUERY"] = sql
+		self.request.method = 'HEAD'
+		self.request.REQUEST = self.queryDict
+
+		response = views.sync(self.request)
+		self.assertEquals(204, response.status_code)
+		self.assertEquals('', response.content)
+
+
+	def testSyncWavelength(self):
+		settings.DEBUG = DEBUG
+		sql = "SELECT All WHERE RadTransWavelength > 0 AND RadTransWavelength < 4000"
+		self.queryDict["QUERY"] = sql
+		self.request.REQUEST = self.queryDict
+
+		response = views.sync(self.request)
+		self.assertEquals(200, response.status_code)
+
+		content = response.content
+		objTree = objectify.fromstring(content)
+		removeSelfSource(objTree)
+		actual = etree.tostring(objTree, pretty_print=True)
+		xsamsXSD.assertValid(objTree)
+
+
+	def testSyncWavelengthForHeadRequest(self):
+		settings.DEBUG = DEBUG
+		sql = "SELECT All WHERE RadTransWavelength > 0 AND RadTransWavelength < 4000"
+		self.queryDict["QUERY"] = sql
+		self.request.method = 'HEAD'
+		self.request.REQUEST = self.queryDict
+
+		response = views.sync(self.request)
+		headers = response.items()
+		headers.pop(1)
+
+		self.assertEquals(200, response.status_code)
+		expected_headers = [
+			('VAMDC-COUNT-SPECIES', '1'),
+			('VAMDC-COUNT-STATES', '133'),
+			('VAMDC-COUNT-MOLECULES', '1'),
+			('VAMDC-COUNT-SOURCES', '3'),
+			('Last-Modified', 'Thu, 05 Nov 2015 18:00:00 GMT'),
+			('VAMDC-APPROX-SIZE', '0.110'),
+			('VAMDC-COUNT-RADIATIVE', '168'),
+			('Content-Type', 'text/xml'),
+			('VAMDC-TRUNCATED', '100')
+		]
+
+		self.assertSequenceEqual(expected_headers, headers)
+		self.assertEquals('', response.content)
+
+
 	def testSelectSpecies(self):
 		settings.DEBUG = DEBUG
 		sql = "SELECT SPECIES"
@@ -284,19 +351,6 @@ class TapSyncTest(TestCase):
 			self.fail("Sources is empty")
 
 
-	def testSyncWavelength(self):
-		settings.DEBUG = DEBUG
-		sql = "SELECT All WHERE RadTransWavelength > 0 AND RadTransWavelength < 4000"
-		self.queryDict["QUERY"] = sql
-		self.request.REQUEST = self.queryDict
-
-		content = views.sync(self.request).content
-		objTree = objectify.fromstring(content)
-		removeSelfSource(objTree)
-		actual = etree.tostring(objTree, pretty_print=True)
-		xsamsXSD.assertValid(objTree)
-
-
 	def testSyncSelectSaga2_co2(self):
 		settings.DEBUG = DEBUG
 		sql = "SELECT All WHERE ((Inchi='InChI=1S/CO2/c2-1-3'  AND RadTransWavenumber > 6503.53 AND RadTransWavenumber < 6503.5736) AND MethodCategory = 'experiment')"
@@ -351,9 +405,9 @@ class TapSyncTest(TestCase):
 		self.queryDict["QUERY"] = sql
 		self.request.REQUEST = self.queryDict
 
-		content = views.sync(self.request).content
-		objTree = objectify.fromstring(content)
-		xsamsXSD.assertValid(objTree)
+		response = views.sync(self.request)
+		self.assertEquals(204, response.status_code)
+		self.assertEquals('', response.content)
 
 
 	def testSyncSelectSaga2_co(self):

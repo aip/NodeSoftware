@@ -18,6 +18,7 @@ from django.db.models import Q
 
 import other.verification.http
 from vamdctap.sqlparse import sql2Q
+from vamdctap.generators import Xsams, XsamsHeader
 
 from wadis.node import models
 from wadis.node.model import atmos
@@ -237,16 +238,16 @@ def getDatabase(q, default):
 #------------------------------------------------------------
 # Main function 
 #------------------------------------------------------------
-def setupResults(tap):
+def setupResults(tap_query):
 	"""
 		This function is always called by the software.
 	"""
 
 	# log the incoming query
-	LOG(tap)
+	LOG(tap_query)
 
 	# SELECT SPECIES
-	if (len(tap.parsedSQL.columns) == 1) and not tap.where:
+	if (len(tap_query.parsedSQL.columns) == 1) and not tap_query.where:
 		self_source = atmos.Biblios()
 		self_source.biblioid = 0
 		self_source.biblioname = settings.NODENAME.upper()
@@ -272,9 +273,9 @@ def setupResults(tap):
 			}
 		}
 
-	if not tap.where:
+	if not tap_query.where:
 		return {}
-	q = sql2Q(tap)
+	q = sql2Q(tap_query)
 
 	database = getDatabase(q, None)
 	if database is None:
@@ -314,7 +315,8 @@ def setupResults(tap):
 			substance.States = sorted(substance.States.values(), key = lambda x: x.id)
 			stateCount += len(substance.States)
 
-	size = 0.0011 + sourceCount*0.0015 + moleculeCount*0.00065 + stateCount*0.0004 + transitionCount*0.0003
+	size = sourceCount*0.0015 + moleculeCount*0.00065 + stateCount*0.0004 + transitionCount*0.0003
+	size += 0.0011 if size > 0 else 0.0
 
 	# Create the header with some useful info. The key names here are
 	# standardized and shouldn't be changed.
@@ -331,8 +333,8 @@ def setupResults(tap):
 		'TRUNCATED': percentage, #the percentage that the returned data represent with respect to the total amount available for that query
 		'APPROX-SIZE': '%.3f' % size, #estimate uncompressed document size in megabytes
 	}
-
 	LOG(headerInfo)
+
 	# Return the data. The keynames are standardized.
 	# see vamdctap->generators->Xsams()
 	return {#
@@ -350,6 +352,13 @@ def setupResults(tap):
 		#'RadCross':,
 		#'NonRadTrans':,
 	}
+
+
+def customXsams(tap, **kwargs):
+	if tap.HTTPmethod == 'HEAD':
+		return ''
+	else:
+		return Xsams(tap=tap, **kwargs)
 
 
 rules = None #See tests.py
