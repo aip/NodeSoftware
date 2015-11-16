@@ -37,6 +37,7 @@ class Substancecorr(models.Model):
 	database_name = models.CharField(max_length = 16, blank = True)
 	group_access = models.TextField(blank = True)
 	substance_act = models.CharField(max_length = 1)
+	description = models.OneToOneField(Substance, db_column='ID_substance')
 
 
 	def getCharge(self):

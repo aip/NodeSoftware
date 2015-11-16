@@ -218,6 +218,19 @@ class TapSyncTest(TestCase):
 		self.queryDict = toDict(QueryDict(self.query))
 
 
+	def testSelectSpecies(self):
+		settings.DEBUG = DEBUG
+		sql = "SELECT SPECIES"
+		self.queryDict["QUERY"] = sql
+		self.request.REQUEST = self.queryDict
+
+		content = views.sync(self.request).content
+		objTree = objectify.fromstring(content)
+		removeSelfSource(objTree)
+		actual = etree.tostring(objTree, pretty_print=True)
+		xsamsXSD.assertValid(objTree)
+
+
 	def testGetSources(self):
 		settings.DEBUG = DEBUG
 
@@ -510,4 +523,3 @@ def suite():
 	tsuite.addTest(unittest.defaultTestLoader.loadTestsFromModule(sys.modules[__name__]))
 
 	return tsuite
-

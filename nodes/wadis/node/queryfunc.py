@@ -9,6 +9,7 @@
 #
 import sys
 import cgi
+from datetime import date
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
@@ -41,10 +42,11 @@ def set_default_substances():
 	else:
 		settings.DEFAULT_SUBSTANCES = default_substances
 	return settings.DEFAULT_SUBSTANCES
+
+
 #------------------------------------------------------------
 # Helper functions (called from setupResults)
 #------------------------------------------------------------
-
 def getSources(items):
 	sources = {}
 	for item in items:
@@ -88,6 +90,30 @@ def getSources(items):
 			sources[biblioId] = biblio
 
 	return sources.values()
+
+
+def getAllAvailableMolecules():
+
+	available_databases = [database for database in settings.DATABASES if database.startswith('saga2')]
+	q = Q(**{'database_name__in': available_databases})
+	substances = Substancecorr.objects.select_related().filter(q)
+
+	molecules = {substance.id_substance: substance for substance in substances}
+	for id_molecule in molecules:
+		molecule = molecules[id_molecule]
+		englishName = 'Unknown name'
+		if molecule.description.english:
+			englishName = molecule.description.english
+		else:
+			id_main_molecule = molecule.id_subst_main
+			if id_main_molecule and id_main_molecule != id_molecule:
+				main_molecule = molecules[id_main_molecule]
+				if main_molecule.description.english:
+					englishName = main_molecule.description.english + ' isotopologue'
+		molecule.englishName = englishName
+		molecule.weight = molecule.description.weight
+
+	return molecules.values()
 
 
 def getMolecules(items):
@@ -188,6 +214,7 @@ def getTable(q, default):
 							default = tableList[x]
 	return default
 
+
 def getDatabase(q, default):
 	for k, c in enumerate(q.children):
 		if type(c) == Q:
@@ -206,15 +233,45 @@ def getDatabase(q, default):
 								default = substance.database_name
 	return default
 
+
 #------------------------------------------------------------
 # Main function 
 #------------------------------------------------------------
 def setupResults(tap):
 	"""
 		This function is always called by the software.
-		"""
+	"""
+
 	# log the incoming query
 	LOG(tap)
+
+	# SELECT SPECIES
+	if (len(tap.parsedSQL.columns) == 1) and not tap.where:
+		self_source = atmos.Biblios()
+		self_source.biblioid = 0
+		self_source.biblioname = settings.NODENAME.upper()
+		self_source.biblioauthors = 'Fazliev Alexander, etc'
+		self_source.biblioTypeName = 'vamdc node'
+		self_source.biblioyear = date.today().year
+		sources = [self_source]
+		sourceCount = 0
+		if sources is not None:
+			sourceCount = len(sources)
+
+		molecules = getAllAvailableMolecules()
+		moleculeCount = 0
+		if molecules is not None:
+			moleculeCount = len(molecules)
+		return {
+			'Sources': sources,
+			'Molecules': molecules,
+			'HeaderInfo':{
+				'COUNT-SOURCES': sourceCount,
+				'COUNT-MOLECULES': moleculeCount,
+				'COUNT-SPECIES': moleculeCount,
+			}
+		}
+
 	if not tap.where:
 		return {}
 	q = sql2Q(tap)
@@ -294,9 +351,11 @@ def setupResults(tap):
 		#'NonRadTrans':,
 	}
 
+
 rules = None #See tests.py
 def returnResults(tap):
 	return other.verification.http.getResult(tap, rules)
+
 
 set_default_substances()
 
