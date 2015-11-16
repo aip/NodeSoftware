@@ -71,9 +71,9 @@ def removeSelfSource(objTree):
 @test.profile('vamdc_profile.log')
 def getBigFile():
 	settings.DEBUG = True
-	#query = 'LANG=VSS1&FORMAT=VERIFICATION&QUERY=SELECT All WHERE InChI =\'InChI=1S/H2O/h1H2/i/hD\''
-	#query = "LANG=VSS1&FORMAT=XSAMS&QUERY=select * where (RadTransWavenumber >= 1239.0 AND RadTransWavenumber <= 1240.0) AND ((InchiKey IN ('A', 'XLYOFNOQVPJJNP-DYCDLGHISA-N','XLYOFNOQVPJJNP-DQGQKLTASA-N')))"
-	query = "LANG=VSS1&FORMAT=VERIFICATION&QUERY=select * where (RadTransWavenumber >= 1239.0 AND RadTransWavenumber <= 1240.0) AND ((InchiKey IN ('A', 'XLYOFNOQVPJJNP-DYCDLGHISA-N','XLYOFNOQVPJJNP-DQGQKLTASA-N')))"
+	#query = 'LANG=VSS2&FORMAT=VERIFICATION&QUERY=SELECT All WHERE InChI =\'InChI=1S/H2O/h1H2/i/hD\''
+	#query = "LANG=VSS2&FORMAT=XSAMS&QUERY=select * where (RadTransWavenumber >= 1239.0 AND RadTransWavenumber <= 1240.0) AND ((InchiKey IN ('A', 'XLYOFNOQVPJJNP-DYCDLGHISA-N','XLYOFNOQVPJJNP-DQGQKLTASA-N')))"
+	query = "LANG=VSS2&FORMAT=VERIFICATION&QUERY=select * where (RadTransWavenumber >= 1239.0 AND RadTransWavenumber <= 1240.0) AND ((InchiKey IN ('A', 'XLYOFNOQVPJJNP-DYCDLGHISA-N','XLYOFNOQVPJJNP-DQGQKLTASA-N')))"
 
 	request = HttpRequest()
 	request.META["SERVER_NAME"] = 'localhost'
@@ -91,7 +91,7 @@ def getBigFile():
 class VerificationTest(TestCase):
 	prefixURL = "/tap/sync?"
 	# test data sources is only less than 1500 transitions
-	query = 'LANG=VSS1&FORMAT=VERIFICATION&QUERY=SELECT All WHERE InChI =\'InChI=1S/H2O/h1H2/i/hD\' AND RadTransWavenumber > 1250.846 AND RadTransWavenumber < 1250.847'
+	query = 'LANG=VSS2&FORMAT=VERIFICATION&QUERY=SELECT All WHERE InChI =\'InChI=1S/H2O/h1H2/i/hD\' AND RadTransWavenumber > 1250.846 AND RadTransWavenumber < 1250.847'
 
 
 	def setUp(self):
@@ -203,7 +203,7 @@ class VerificationTest(TestCase):
 
 class TapSyncTest(TestCase):
 	prefixURL = "/tap/sync?"
-	query = "LANG=VSS1&FORMAT=XSAMS&QUERY="
+	query = "LANG=VSS2&FORMAT=XSAMS&QUERY="
 
 
 	def setUp(self):
