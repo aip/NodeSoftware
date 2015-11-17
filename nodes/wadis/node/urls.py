@@ -6,5 +6,5 @@ from django.conf.urls import *
 from django.conf import settings
 
 urlpatterns = patterns(settings.NODENAME+'.node.views',
-#                       (r'^$', 'index'),
+                       # (r'^$', 'index'),
                        )
