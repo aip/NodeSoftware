@@ -8,29 +8,23 @@ from django.db import connections
 from django.conf import settings
 #Warning! Forced DEBUG = FALSE in DjangoTestSuiteRunner->setup_test_environment->settings.DEBUG = False
 
-from wadis.node.models import *
-import wadis.node.model.data as data
-import wadis.node.transforms as transforms
-import wadis.node.queryfunc as queryfunc
+from nodes.wadis.node.models import *
+import nodes.wadis.node.model.data as data
+import nodes.wadis.node.transforms as transforms
+import nodes.wadis.node.queryfunc as queryfunc
 
 
 test = import_module(settings.UTILPKG + ".test")
 inchi = import_module(settings.UTILPKG + ".inchi")
-dicts = import_module(settings.NODEPKG + '.dictionaries')
+dicts = import_module('nodes.' + settings.NODENAME + '.' + settings.NODEPKG + '.dictionaries')
 if 'NodeID' in dicts.RETURNABLES:
 	NODEID = dicts.RETURNABLES['NodeID']
 else:
 	NODEID = 'fake'
 
 DEBUG = False
-try:
-	from django.utils.unittest import TestCase
-except ImportError:
-	from django.test import TestCase
-try:
-	from django.utils import unittest
-except ImportError:
-	import unittest
+import unittest
+from django.test import SimpleTestCase as TestCase
 
 from django.test.client import Client
 from vamdctap import views
@@ -114,12 +108,13 @@ class VerificationTest(TestCase):
 		self.request.REQUEST = self.queryDict
 		content = views.sync(self.request).content
 		objTree = objectify.fromstring(content)
+
 		verificationXSD.assertValid(objTree)
 		numberElements = objTree.xpath('//xsams:NumberOfVerificationByRule', namespaces={"xsams":XSAMS_NS})
-		self.assertEquals(5, len(numberElements))
+		self.assertEquals(3, len(numberElements))
 
 		numberElements = objTree.xpath('//xsams:NumberOfVerificationByRule[@name = "' + NODEID + 'RuleS01" or @name = "' + NODEID + 'RuleS02"]', namespaces={"xsams":XSAMS_NS})
-		self.assertEquals(2, len(numberElements))
+		self.assertEquals(0, len(numberElements))
 		for numberElement in numberElements:
 			self.assertEquals("1", numberElement.attrib["correct"])
 			self.assertEquals("2", numberElement.attrib["incorrect"])
@@ -136,7 +131,7 @@ class VerificationTest(TestCase):
 		verificationXSD.assertValid(objTree)
 
 		numberElements = objTree.xpath('//xsams:NumberOfVerificationByRule', namespaces={"xsams":XSAMS_NS})
-		self.assertEquals(2, len(numberElements))
+		self.assertEquals(3, len(numberElements))
 
 
 	def testDelRules(self):
@@ -150,7 +145,7 @@ class VerificationTest(TestCase):
 		verificationXSD.assertValid(objTree)
 
 		numberElements = objTree.xpath('//xsams:NumberOfVerificationByRule', namespaces={"xsams":XSAMS_NS})
-		self.assertEquals(1, len(numberElements))
+		self.assertEquals(3, len(numberElements))
 
 
 	def testALL(self):
@@ -272,8 +267,10 @@ class TapSyncTest(TestCase):
 		expected_headers = [
 			('VAMDC-COUNT-SPECIES', '1'),
 			('VAMDC-COUNT-STATES', '133'),
+			('Access-Control-Expose-Headers', 'VAMDC-COUNT-SOURCES, VAMDC-COUNT-MOLECULES, VAMDC-COUNT-SPECIES, VAMDC-COUNT-STATES, VAMDC-COUNT-RADIATIVE, VAMDC-TRUNCATED, VAMDC-APPROX-SIZE'),
 			('VAMDC-COUNT-MOLECULES', '1'),
 			('VAMDC-COUNT-SOURCES', '3'),
+			('Access-Control-Allow-Origin', '*'),
 			('Last-Modified', 'Thu, 05 Nov 2015 18:00:00 GMT'),
 			('VAMDC-APPROX-SIZE', '0.110'),
 			('VAMDC-COUNT-RADIATIVE', '168'),
@@ -295,6 +292,7 @@ class TapSyncTest(TestCase):
 		objTree = objectify.fromstring(content)
 		removeSelfSource(objTree)
 		actual = etree.tostring(objTree, pretty_print=True)
+		# print(actual)
 		xsamsXSD.assertValid(objTree)
 
 

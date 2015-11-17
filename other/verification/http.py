@@ -35,6 +35,6 @@ def getResult(tap, rules = None):
 	ver = check.Verification(xsamsResponse.content, rules)
 	ver.run(bad=None if action == 'all' else True if action == 'bad' else False)
 
-	response = HttpResponse(ver.getXML(), mimetype='text/xml')
+	response = HttpResponse(ver.getXML(), content_type='text/xml')
 	response._headers = xsamsResponse._headers
 	return response

@@ -13,19 +13,18 @@ from datetime import date
 
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models.query import EmptyQuerySet
 from django.db.models import Q
 
 import other.verification.http
 from vamdctap.sqlparse import sql2Q
-from vamdctap.generators import Xsams, XsamsHeader
+from vamdctap.generators import Xsams
 
-from wadis.node import models
-from wadis.node.model import atmos
-from wadis.node.model.data import State
-from wadis.node.model.saga import Substancecorr, Substance
-from wadis.node.transforms import makeQ
-from wadis.node.dictionaries import RETURNABLES
+from nodes.wadis.node import models
+from nodes.wadis.node.model import atmos
+from nodes.wadis.node.model.data import State
+from nodes.wadis.node.model.saga import Substancecorr, Substance
+from nodes.wadis.node.transforms import makeQ
+from nodes.wadis.node.dictionaries import RETURNABLES
 
 
 def LOG(s):
@@ -195,7 +194,7 @@ def getRows(database, table, q):
 
 		return tableObj.objects.select_related().exclude(exQ).filter(makeQ(q, (table,), settings.DEFAULT_SUBSTANCES))
 	else:
-		return EmptyQuerySet()
+		return models.saga2.Transition.objects.none()
 
 
 tableList = {'energy':'energy', 'einstein_coefficient':'transition', 'intensity':'lineprof'}
@@ -248,6 +247,9 @@ def setupResults(tap_query):
 
 	# SELECT SPECIES
 	if (len(tap_query.parsedSQL.columns) == 1) and not tap_query.where:
+		#empty NormalModes XML-element remove
+		tap_query.requestables.add('moleculestates')
+
 		self_source = atmos.Biblios()
 		self_source.biblioid = 0
 		self_source.biblioname = settings.NODENAME.upper()
@@ -358,6 +360,14 @@ def customXsams(tap, **kwargs):
 	if tap.HTTPmethod == 'HEAD':
 		return ''
 	else:
+		headers = kwargs.get('HeaderInfo') or {}
+		if 'APPROX-SIZE' in headers:
+			try:
+				size = float(headers['APPROX-SIZE'])
+				if size == 0.0:
+					return ''
+			except:
+				pass
 		return Xsams(tap=tap, **kwargs)
 
 

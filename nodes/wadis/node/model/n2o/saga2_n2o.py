@@ -1,4 +1,4 @@
-from wadis.node.model.data import *
+from nodes.wadis.node.model.data import *
 
 
 prefix = 'ltcs'

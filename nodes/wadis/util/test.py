@@ -1,10 +1,10 @@
-from django.test.simple import DjangoTestSuiteRunner
+from django.test.runner import DiscoverRunner
 import os
 from django.conf import settings
 import cProfile
 
 
-class NoTestDatabaseTestRunner(DjangoTestSuiteRunner):
+class NoTestDatabaseTestRunner(DiscoverRunner):
 	def setup_databases(self, **kwargs):
 		pass
 
