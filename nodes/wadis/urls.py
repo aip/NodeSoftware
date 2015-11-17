@@ -6,10 +6,10 @@ from django.conf.urls import *
 
 urlpatterns = patterns('',
                        # Uncomment the next line to enable the admin:
-                       #(r'^admin/', include(admin.site.urls)),
-                       #(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-	(r'^tap/', include('vamdctap.urls')),
-	(r'', include('wadis.node.urls')),
+                       # (r'^admin/', include(admin.site.urls)),
+                       # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+                       (r'^tap/', include('vamdctap.urls')),
+                       (r'', include('nodes.wadis.node.urls')),
                        )
 
 handler500 = 'vamdctap.views.tapServerError'
