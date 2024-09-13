@@ -24,6 +24,7 @@ class Substance(models.Model):
 
 class Substancecorr(models.Model):
 	id_substance = models.IntegerField(db_column = 'ID_substance', primary_key = True) # Field name made lowercase.
+	database_type = models.CharField(max_length = 15)
 	plain_name = models.TextField(blank = True)
 	html_name = models.TextField(blank = True)
 	id_inchi = models.TextField(blank = True)

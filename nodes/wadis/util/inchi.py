@@ -8,8 +8,8 @@ def getInchiLib():
 		path = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "/lib"
 		absLibPath = "%s/libinchi.so.1" % path
 		inchiLib = cdll.LoadLibrary(absLibPath)
-	except:
-		raise Exception('Could not access ' + absLibPath)
+	except Exception as e:
+		raise Exception('Could not access ' + absLibPath + "\n" + e.message)
 	return inchiLib
 
 

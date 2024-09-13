@@ -94,7 +94,7 @@ def getSources(items):
 
 def getAllAvailableMolecules():
 
-	available_databases = [database for database in settings.DATABASES if database.startswith('saga2')]
+	available_databases = [database for database in settings.DATABASES if database.startswith('saga4_')]
 	q = Q(**{'database_name__in': available_databases})
 	substances = Substancecorr.objects.select_related().filter(q)
 
@@ -194,7 +194,7 @@ def getRows(database, table, q):
 
 		return tableObj.objects.select_related().exclude(exQ).filter(makeQ(q, (table,), settings.DEFAULT_SUBSTANCES))
 	else:
-		return models.saga2.Transition.objects.none()
+		return models.saga4_h2o_1000021.Transition.objects.none()
 
 
 tableList = {'energy':'energy', 'einstein_coefficient':'transition', 'intensity':'lineprof'}
@@ -281,7 +281,7 @@ def setupResults(tap_query):
 
 	database = getDatabase(q, None)
 	if database is None:
-		database = "saga2"
+		database = "saga4_h2o_1000021"
 
 	table = getTable(q, None)
 	if table is None:
