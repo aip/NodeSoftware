@@ -299,7 +299,7 @@ class TapSyncTest(TestCase):
 	def testGetSources(self):
 		settings.DEBUG = DEBUG
 
-		transitions = saga4_h2o_1000021.Transition.objects.select_related().filter(id_transition_ds=17)
+		transitions = saga4_h2o_1000021.Transition.objects.using('saga4_h2o_1000021').select_related().filter(id_transition_ds=17)
 		sources = queryfunc.getSources(transitions)
 		if len(sources) == 1:
 			self.assertEquals('2', sources[0].getArticleNumber())

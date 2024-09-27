@@ -27,6 +27,9 @@ from nodes.wadis.node.transforms import makeQ
 from nodes.wadis.node.dictionaries import RETURNABLES
 
 
+
+from django.db import connection
+
 def LOG(s):
 	if settings.DEBUG: print >> sys.stderr, "\n%s" % s
 
@@ -183,18 +186,25 @@ def getMolecules(items):
 
 
 def getRows(database, table, q):
+	connection.force_debug_cursor = True
 	LOG(q)
 	dbModule = getattr(models, database, None)
 	if dbModule:
-		tableObj = getattr(dbModule , table.capitalize())
-		tableDigestObj = getattr(dbModule , table.capitalize() + 'Digest')
+		tableObj = getattr(dbModule, table.capitalize())
+		tableObj.objects = tableObj.objects.using(database)
+		tableDigestObj = getattr(dbModule, table.capitalize() + 'Digest')
+		tableDigestObj.objects = tableDigestObj.objects.using(database)
 		table = 'transition' if table == 'lineprof' else table
 		dsID = 'id_%s_ds' % table
 		exQ = Q(**{dsID + '__in': tableDigestObj.objects.filter(line_count__gt=settings.LIMIT).values_list(dsID, flat=True)})
-
-		return tableObj.objects.select_related().exclude(exQ).filter(makeQ(q, (table,), settings.DEFAULT_SUBSTANCES))
+		import django.db.models.sql.query
+		django.db.models.sql.query.DEFAULT_DB_ALIAS = database
+		django.db.models.sql.query.connections = django.db.connections
+		qs = tableObj.objects.select_related().exclude(exQ).filter(makeQ(q, (table,), settings.DEFAULT_SUBSTANCES))
+		LOG(str(qs.query))
+		return qs
 	else:
-		return models.saga4_h2o_1000021.Transition.objects.none()
+		return models.saga4_h2o_1000021.Transition.objects.using('saga4_h2o_1000021').none()
 
 
 tableList = {'energy':'energy', 'einstein_coefficient':'transition', 'intensity':'lineprof'}
@@ -281,7 +291,7 @@ def setupResults(tap_query):
 
 	database = getDatabase(q, None)
 	if database is None:
-		database = "saga4_h2o_1000021"
+		database = "saga4_h2o_1000115"
 
 	table = getTable(q, None)
 	if table is None:

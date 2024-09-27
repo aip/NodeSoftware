@@ -7,9 +7,9 @@ substance_id_field = 'id_substance'
 
 def makeQ(q, tuple, default_substances = []):
 	defaultFlag = formatQ(q, tuple, True)
-	q &= Q(**{'id_%s_ds__status__exact' % tuple[0]: 'public'})
+	q &= Q(**{'id_%s_ds__status__exact' % tuple[0]: "public"})
 	q &= Q(**{'id_%s_ds__type__exact' % tuple[0]: '1'})
-	q &= Q(**{'id_%s_ds__composition__exact' % tuple[0]: 'Primary'})
+	q &= Q(**{'id_%s_ds__composition__exact' % tuple[0]: "Primary"})
 	if defaultFlag and default_substances:
 		q &= Q(**{substance_id_field + '__in': default_substances})
 	return q
