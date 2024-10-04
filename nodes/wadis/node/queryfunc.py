@@ -289,7 +289,7 @@ def setupResults(tap_query):
 
 	database = getDatabase(q, None)
 	if database is None:
-		database = "saga4_h2o_1000115"
+		database = "saga4_h2o_1000021"
 
 	table = getTable(q, None)
 	if table is None:
