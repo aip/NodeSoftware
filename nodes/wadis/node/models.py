@@ -6,7 +6,12 @@ from nodes.wadis.node.model.saga import *
 import importlib
 import inspect
 import django.db
+import django.db.models.sql.query
+import django.db.models.sql.subqueries
+import django.db.models.fields.related
 from django.conf import settings
+
+
 def set_databases_settings():
 	import_libs = {}
 	if settings.DATABASES:
@@ -19,7 +24,7 @@ def set_databases_settings():
 					values_list('id_substance', flat=True)
 				for substance in substances:
 					database_name = database_type + '_' + str(substance)
-					databases_settings[database_name] = settings.DATABASES[database_type]
+					databases_settings[database_name] = settings.DATABASES[database_type].copy()
 					databases_settings[database_name]['NAME'] = database_name
 					import_libs[database_name] = "nodes.wadis.node.model." + substance_suffix + "." + database_type
 			else:
@@ -29,8 +34,13 @@ def set_databases_settings():
 		django.db.reset_queries()
 		django.db.close_old_connections()
 		django.db.connections = django.db.ConnectionHandler(databases_settings)
+		django.db.models.sql.query.connections = django.db.connections
+		django.db.models.sql.subqueries.connections = django.db.connections
+		django.db.models.fields.related.connections = django.db.connections
 
 	return import_libs
+
+
 import_libs = set_databases_settings()
 for database_name in import_libs:
 	globals()[database_name] = importlib.import_module(import_libs[database_name])
@@ -38,4 +48,3 @@ for database_name in import_libs:
 		if inspect.isclass(obj) and issubclass(obj, django.db.models.Model) and hasattr(obj, 'objects'):
 			# obj.objects = obj.objects.using(database_name)
 			pass
-

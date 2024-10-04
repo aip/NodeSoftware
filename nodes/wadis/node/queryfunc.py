@@ -26,10 +26,6 @@ from nodes.wadis.node.model.saga import Substancecorr, Substance
 from nodes.wadis.node.transforms import makeQ
 from nodes.wadis.node.dictionaries import RETURNABLES
 
-
-
-from django.db import connection
-
 def LOG(s):
 	if settings.DEBUG: print >> sys.stderr, "\n%s" % s
 
@@ -186,7 +182,8 @@ def getMolecules(items):
 
 
 def getRows(database, table, q):
-	connection.force_debug_cursor = True
+	import django.db
+	django.db.connection.force_debug_cursor = True
 	LOG(q)
 	dbModule = getattr(models, database, None)
 	if dbModule:
@@ -197,9 +194,10 @@ def getRows(database, table, q):
 		table = 'transition' if table == 'lineprof' else table
 		dsID = 'id_%s_ds' % table
 		exQ = Q(**{dsID + '__in': tableDigestObj.objects.filter(line_count__gt=settings.LIMIT).values_list(dsID, flat=True)})
+		import django.db
+		django.db.DEFAULT_DB_ALIAS = database
 		import django.db.models.sql.query
 		django.db.models.sql.query.DEFAULT_DB_ALIAS = database
-		django.db.models.sql.query.connections = django.db.connections
 		qs = tableObj.objects.select_related().exclude(exQ).filter(makeQ(q, (table,), settings.DEFAULT_SUBSTANCES))
 		LOG(str(qs.query))
 		return qs
